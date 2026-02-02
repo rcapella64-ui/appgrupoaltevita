@@ -4,10 +4,11 @@ import { Button } from "./ui/button";
 import cuidameLogo from "@/assets/cuidame-logo.png";
 
 const navLinks = [
-  { href: "#funcionalidades", label: "Funcionalidades" },
-  { href: "#perfis", label: "Perfis" },
-  { href: "#beneficios", label: "Benefícios" },
-  { href: "#contato", label: "Contato" },
+  { href: "#", label: "Início" },
+  { href: "#familias", label: "Para Famílias" },
+  { href: "#empresas", label: "Para Empresas" },
+  { href: "#precos", label: "Preços" },
+  { href: "#ajuda", label: "Ajuda" },
 ];
 
 const Navbar = () => {
@@ -26,40 +27,40 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-5"
+          ? "bg-background/95 backdrop-blur-md shadow-sm py-3"
+          : "bg-transparent py-4"
       }`}
     >
-      <div className="container-wide flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <img src={cuidameLogo} alt="Cuidame" className="h-10 md:h-12" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <a href="#" className="flex items-center">
+          <img src={cuidameLogo} alt="Cuidame" className="h-8 md:h-10" />
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <Button variant="ghost" className="text-sm font-medium">
+        <div className="hidden lg:flex items-center gap-4">
+          <a href="#" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
             Entrar
-          </Button>
-          <Button className="bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity">
-            Começar Agora
+          </a>
+          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
+            Começar Grátis
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -69,24 +70,24 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border animate-fade-in">
-          <nav className="container-wide py-6 flex flex-col gap-4">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg">
+          <nav className="px-4 py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium text-foreground/80 hover:text-primary transition-colors py-2"
+                className="text-base font-medium text-foreground/70 hover:text-primary transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
-              <Button variant="outline" className="w-full">
+              <a href="#" className="text-base font-medium text-foreground/70 py-2">
                 Entrar
-              </Button>
-              <Button className="w-full bg-gradient-primary text-primary-foreground">
-                Começar Agora
+              </a>
+              <Button className="w-full bg-primary text-primary-foreground rounded-full">
+                Começar Grátis
               </Button>
             </div>
           </nav>
