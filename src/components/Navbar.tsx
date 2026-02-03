@@ -27,7 +27,7 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/70 backdrop-blur-xl shadow-lg shadow-black/5 py-3 border-b border-white/20"
+          ? "bg-white/50 backdrop-blur-xl shadow-lg shadow-black/5 py-3 border-b border-white/20"
           : "bg-transparent py-4"
       }`}
     >
