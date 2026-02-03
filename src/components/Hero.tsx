@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import heroMockup from "@/assets/hero-mockup.png";
 
 const Hero = () => {
   return (
@@ -50,67 +50,13 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Phone Mockup */}
+          {/* Phone Mockup Image */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Phone Frame */}
-              <div className="relative w-[280px] md:w-[320px] h-[560px] md:h-[640px] bg-white rounded-[3rem] shadow-2xl border-8 border-foreground/10 overflow-hidden">
-                {/* Phone Screen Content */}
-                <div className="absolute inset-0 bg-gradient-to-b from-primary to-primary/90">
-                  {/* Status Bar */}
-                  <div className="flex justify-between items-center px-6 pt-3 text-white text-xs">
-                    <span>9:41</span>
-                    <div className="flex gap-1">
-                      <div className="w-4 h-2 bg-white/80 rounded-sm"></div>
-                    </div>
-                  </div>
-                  
-                  {/* App Content Preview */}
-                  <div className="p-4 mt-2">
-                    <div className="flex items-center justify-center mb-6">
-                      <img src="/src/assets/cuidame-logo.png" alt="Cuidame" className="h-8 brightness-0 invert" />
-                    </div>
-                    
-                    <div className="bg-white rounded-2xl p-4 mb-3 shadow-lg">
-                      <p className="text-primary font-semibold text-sm mb-1">Olá!</p>
-                      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-3 mb-2">
-                        <p className="text-xs text-foreground font-medium">Sou Cliente ou Colaborador do Grupo Altevita</p>
-                        <p className="text-[10px] text-muted-foreground mt-1">Tenho um familiar ou paciente em uma unidade do Grupo Altevita</p>
-                      </div>
-                      <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-3">
-                        <p className="text-xs text-foreground font-medium">Não sou Cliente. Quero usar o app para cuidar da saúde de alguém</p>
-                        <p className="text-[10px] text-muted-foreground mt-1">Versão para famílias, cuidadores e pacientes</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-foreground/10 rounded-b-2xl"></div>
-              </div>
-
-              {/* Second Phone (tilted) */}
-              <div className="absolute -right-16 top-20 w-[200px] md:w-[240px] h-[400px] md:h-[480px] bg-white rounded-[2.5rem] shadow-xl border-6 border-foreground/10 overflow-hidden rotate-12 hidden md:block">
-                <div className="absolute inset-0 bg-white">
-                  <div className="bg-primary p-3">
-                    <div className="flex items-center justify-center">
-                      <img src="/src/assets/cuidame-logo.png" alt="Cuidame" className="h-6 brightness-0 invert" />
-                    </div>
-                  </div>
-                  <div className="p-3">
-                    <p className="text-xs font-semibold text-foreground mb-2">Deixe-me lhe apresentar o CUIDAME</p>
-                    <div className="flex justify-center mb-2">
-                      <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
-                        <span className="text-2xl">💚</span>
-                      </div>
-                    </div>
-                    <p className="text-[9px] text-muted-foreground text-center leading-relaxed">
-                      Organize a saúde das pessoas sob seus cuidados, sejam familiares ou pacientes.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <img 
+              src={heroMockup} 
+              alt="App Cuidame em dois smartphones mostrando tela de login e seleção de perfil" 
+              className="w-full max-w-[500px] lg:max-w-[600px] h-auto drop-shadow-2xl"
+            />
           </div>
         </div>
       </div>
