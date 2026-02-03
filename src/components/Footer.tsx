@@ -111,7 +111,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Cuidame - Grupo Altevita. Todos os direitos reservados.
           </p>
           <div className="flex gap-4 text-xs text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Termos de Uso</a>
+            <a href="/termos" className="hover:text-foreground transition-colors">Termos de Uso</a>
             <a href="/privacidade" className="hover:text-foreground transition-colors">Política de Privacidade</a>
           </div>
         </div>
