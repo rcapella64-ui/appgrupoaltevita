@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { MessageSquare, FileText, Clock, Check } from "lucide-react";
 import cuidameLogo from "@/assets/cuidame-logo.png";
 
 const Familias = () => {
@@ -122,18 +123,288 @@ const Familias = () => {
         </div>
       </section>
 
-      {/* Plans Link */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <a 
-            href="#precos" 
-            className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium"
-          >
-            Ver todos os detalhes dos planos
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
+      {/* Como o Cuidame ajuda você Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Como o Cuidame ajuda você
+            </h2>
+            <p className="text-muted-foreground max-w-md mx-auto">
+              Funcionalidades pensadas para dar tranquilidade à sua família
+            </p>
+          </div>
+
+          {/* Feature 1 - Left aligned */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+            <div>
+              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                <Clock className="w-6 h-6 text-accent" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                Não pergunte, saiba.
+              </h3>
+              <p className="text-muted-foreground">
+                Monitore se a medicação foi dada e veja os sinais vitais em tempo real.
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-[220px] h-[440px] bg-white rounded-[2.5rem] shadow-xl border-6 border-foreground/10 overflow-hidden">
+                <div className="absolute inset-0 bg-white">
+                  <div className="bg-primary p-3">
+                    <img src={cuidameLogo} alt="Cuidame" className="h-5 brightness-0 invert mx-auto" />
+                  </div>
+                  <div className="p-3">
+                    <p className="text-[10px] font-semibold text-foreground mb-2">Acompanhamento Diário</p>
+                    <div className="space-y-2">
+                      <div className="bg-accent/10 rounded-lg p-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-[9px] font-medium">Pressão Arterial</span>
+                          <span className="text-[9px] text-accent font-bold">120/80</span>
+                        </div>
+                      </div>
+                      <div className="bg-accent/10 rounded-lg p-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-[9px] font-medium">Glicemia</span>
+                          <span className="text-[9px] text-accent font-bold">95 mg/dL</span>
+                        </div>
+                      </div>
+                      <div className="bg-green-100 rounded-lg p-2">
+                        <div className="flex items-center gap-2">
+                          <Check className="w-3 h-3 text-green-600" />
+                          <span className="text-[9px] font-medium text-green-700">Medicação administrada</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 2 - Right aligned */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+              <div className="relative w-[220px] h-[440px] bg-white rounded-[2.5rem] shadow-xl border-6 border-foreground/10 overflow-hidden">
+                <div className="absolute inset-0 bg-white">
+                  <div className="bg-primary p-3">
+                    <img src={cuidameLogo} alt="Cuidame" className="h-5 brightness-0 invert mx-auto" />
+                  </div>
+                  <div className="p-3">
+                    <p className="text-[10px] font-semibold text-foreground mb-2">Chat da Família</p>
+                    <div className="space-y-2">
+                      <div className="bg-gray-100 rounded-lg p-2 max-w-[80%]">
+                        <p className="text-[8px] font-medium text-accent">Enfermeira Ana</p>
+                        <p className="text-[8px]">Medicação das 8h administrada ✓</p>
+                      </div>
+                      <div className="bg-accent/20 rounded-lg p-2 max-w-[80%] ml-auto">
+                        <p className="text-[8px]">Obrigada pela atualização!</p>
+                      </div>
+                      <div className="bg-gray-100 rounded-lg p-2 max-w-[80%]">
+                        <p className="text-[8px] font-medium text-accent">Cuidadora Maria</p>
+                        <p className="text-[8px]">Paciente se alimentou bem hoje</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                <MessageSquare className="w-6 h-6 text-accent" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                Comunicação sem ruído.
+              </h3>
+              <p className="text-muted-foreground">
+                Um chat exclusivo para saúde. Nada de mensagens perdidas no WhatsApp pessoal.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 3 - Left aligned */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                <FileText className="w-6 h-6 text-accent" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                Histórico na mão.
+              </h3>
+              <p className="text-muted-foreground">
+                Leve o histórico completo de pressão, glicemia e humor para a consulta médica.
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-[220px] h-[440px] bg-white rounded-[2.5rem] shadow-xl border-6 border-foreground/10 overflow-hidden">
+                <div className="absolute inset-0 bg-white">
+                  <div className="bg-primary p-3">
+                    <img src={cuidameLogo} alt="Cuidame" className="h-5 brightness-0 invert mx-auto" />
+                  </div>
+                  <div className="p-3">
+                    <p className="text-[10px] font-semibold text-foreground mb-2">Histórico de Saúde</p>
+                    <div className="space-y-2">
+                      <div className="border border-border rounded-lg p-2">
+                        <p className="text-[8px] font-medium">Janeiro 2026</p>
+                        <div className="flex gap-2 mt-1">
+                          <span className="text-[7px] bg-accent/10 px-1 rounded">12 registros</span>
+                          <span className="text-[7px] bg-green-100 px-1 rounded text-green-700">Estável</span>
+                        </div>
+                      </div>
+                      <div className="border border-border rounded-lg p-2">
+                        <p className="text-[8px] font-medium">Dezembro 2025</p>
+                        <div className="flex gap-2 mt-1">
+                          <span className="text-[7px] bg-accent/10 px-1 rounded">15 registros</span>
+                          <span className="text-[7px] bg-green-100 px-1 rounded text-green-700">Estável</span>
+                        </div>
+                      </div>
+                      <div className="border border-border rounded-lg p-2">
+                        <p className="text-[8px] font-medium">Novembro 2025</p>
+                        <div className="flex gap-2 mt-1">
+                          <span className="text-[7px] bg-accent/10 px-1 rounded">10 registros</span>
+                          <span className="text-[7px] bg-yellow-100 px-1 rounded text-yellow-700">Atenção</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="precos" className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full mb-4">
+              Preços transparentes
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Escolha o plano ideal para <span className="text-accent">você</span>
+            </h2>
+            <p className="text-muted-foreground max-w-md mx-auto">
+              Comece gratuitamente e faça upgrade quando precisar de mais recursos.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Plano Gratuito */}
+            <div className="bg-white rounded-2xl p-6 border border-border">
+              <p className="text-sm text-muted-foreground mb-1">Para começar</p>
+              <h3 className="text-xl font-bold text-foreground mb-2">Plano Gratuito</h3>
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-foreground">Grátis</span>
+                <span className="text-muted-foreground text-sm ml-1">para sempre</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-6">
+                Ideal para famílias iniciando o cuidado
+              </p>
+              
+              <div className="mb-4">
+                <p className="text-xs font-semibold text-foreground mb-2">Contas:</p>
+                <ul className="space-y-1 text-xs text-muted-foreground">
+                  <li>• 1 Paciente</li>
+                  <li>• 1 Familiar (Gestor de Cuidado)</li>
+                  <li>• 2 Cuidadores (Familiares ou Profissionais)</li>
+                </ul>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-xs font-semibold text-foreground mb-2">Funcionalidades:</p>
+                <ul className="space-y-1 text-xs text-muted-foreground">
+                  <li>• Prescrições Médicas</li>
+                  <li>• Prescrição de Cuidados</li>
+                  <li>• Escala de cuidadores</li>
+                  <li>• Rotinas de saúde</li>
+                  <li>• Registro e atuação de gastos</li>
+                  <li>• Conteúdos Básicos</li>
+                </ul>
+              </div>
+
+              <Button variant="outline" className="w-full rounded-full">
+                Criar Conta Grátis
+              </Button>
+            </div>
+
+            {/* Plano Premium */}
+            <div className="bg-white rounded-2xl p-6 border-2 border-accent relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="bg-accent text-white text-xs font-medium px-3 py-1 rounded-full">
+                  Recomendado
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-1">Mais recursos</p>
+              <h3 className="text-xl font-bold text-foreground mb-2">Plano Premium</h3>
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-accent">R$ 9,90</span>
+                <span className="text-muted-foreground text-sm ml-1">/mês</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-6">
+                Para famílias que querem mais controle
+              </p>
+              
+              <div className="mb-4">
+                <p className="text-xs font-semibold text-foreground mb-2">Contas:</p>
+                <ul className="space-y-1 text-xs text-muted-foreground">
+                  <li>• 2 Pacientes</li>
+                  <li>• 2 Familiares (Gestores de Cuidado)</li>
+                  <li>• 2 Cuidadores (Familiares ou Profissionais)</li>
+                </ul>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-xs font-semibold text-foreground mb-2">Funcionalidades:</p>
+                <ul className="space-y-1 text-xs text-muted-foreground">
+                  <li>• Todas do plano gratuito</li>
+                  <li>• Registro de consultas de saúde</li>
+                  <li>• Registro de exames</li>
+                  <li>• Agenda personalizada por paciente</li>
+                  <li>• Avaliação de Enfermagem</li>
+                  <li>• Conteúdos exclusivos</li>
+                </ul>
+              </div>
+
+              <div className="bg-accent/10 rounded-lg p-3 mb-4 text-center">
+                <p className="text-[10px] text-accent">
+                  Aproveite todos os recursos do Plano Premium durante o mês de lançamento do aplicativo Cuidame (até 01/03/2026)
+                </p>
+              </div>
+
+              <Button className="w-full bg-accent text-white hover:bg-accent/90 rounded-full">
+                Assinar Premium →
+              </Button>
+            </div>
+
+            {/* Usuário Adicional */}
+            <div className="bg-white rounded-2xl p-6 border border-border">
+              <p className="text-sm text-muted-foreground mb-1">Expanda seu plano</p>
+              <h3 className="text-xl font-bold text-foreground mb-2">Inclua mais pessoas na sua conta</h3>
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-accent">+ R$ 2,90</span>
+                <span className="text-muted-foreground text-sm ml-1">/mês</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-6">
+                por usuário adicional
+              </p>
+              
+              <div className="mb-6">
+                <p className="text-xs text-muted-foreground mb-3">
+                  Você poderá cadastrar mais um usuário:
+                </p>
+                <ul className="space-y-1 text-xs text-muted-foreground">
+                  <li>• +1 Paciente ou</li>
+                  <li>• +1 Familiar (Gestores de Cuidado) ou</li>
+                  <li>• +1 Cuidadores (Familiares ou Profissionais)</li>
+                </ul>
+              </div>
+
+              <Button variant="outline" className="w-full rounded-full">
+                Adicionar Usuário
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -147,13 +418,13 @@ const Familias = () => {
             Aproveite todos os recursos do Plano Premium durante o mês de lançamento do aplicativo Cuidame (até 01/03/2026)
           </p>
           <div className="flex flex-wrap justify-center gap-4">
+            <Button className="bg-white text-primary hover:bg-white/90 rounded-full px-6">
+              Começar Grátis →
+            </Button>
             <Button 
               variant="outline" 
               className="bg-transparent border-white text-white hover:bg-white hover:text-primary rounded-full px-6"
             >
-              Começar Grátis →
-            </Button>
-            <Button className="bg-white text-primary hover:bg-white/90 rounded-full px-6">
               Ver Preços
             </Button>
           </div>
