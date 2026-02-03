@@ -1,11 +1,49 @@
 import heroMockup from "@/assets/hero-mockup.png";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
-      {/* Decorative green blobs */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-accent/20 to-cuidame-teal/10 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
+      {/* Animated decorative green blobs */}
+      <motion.div 
+        className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-accent/20 to-cuidame-teal/10 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4"
+        animate={{
+          scale: [1, 1.1, 1],
+          x: [0, 30, 0],
+          y: [0, -20, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div 
+        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-3xl translate-y-1/4 -translate-x-1/4"
+        animate={{
+          scale: [1, 1.15, 1],
+          x: [0, -20, 0],
+          y: [0, 30, 0],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div 
+        className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-gradient-to-br from-primary/5 to-accent/10 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          x: [0, 40, 0],
+          y: [0, -30, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
