@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import loveSectionImage from "@/assets/love-section-family.jpg";
 
 const benefits = [
   "Mantenha a saúde em tempo real",
@@ -20,15 +21,11 @@ export function LoveSection() {
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-2xl" />
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-cuidame-teal/20 rounded-full blur-2xl" />
               
-              {/* Placeholder image area */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-2xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-5xl">👨‍👩‍👧‍👦</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">Família cuidando com amor</p>
-                </div>
-              </div>
+              <img 
+                src={loveSectionImage} 
+                alt="Família multigeracional cuidando de idosa com carinho e amor" 
+                className="aspect-[4/3] w-full object-cover rounded-2xl"
+              />
             </div>
           </div>
 
