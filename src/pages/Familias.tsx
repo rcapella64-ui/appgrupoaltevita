@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, FileText, Clock, Check } from "lucide-react";
 import cuidameLogo from "@/assets/cuidame-logo.png";
+import familiasHeroMockup from "@/assets/familias-hero-mockup.png";
 import { motion } from "framer-motion";
 
 const Familias = () => {
@@ -95,63 +96,20 @@ const Familias = () => {
               </div>
             </div>
 
-            {/* Phone Mockups */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative">
-                {/* Main Phone */}
-                <div className="relative w-[260px] md:w-[300px] h-[520px] md:h-[600px] bg-white rounded-[3rem] shadow-2xl border-8 border-foreground/10 overflow-hidden z-10">
-                  <div className="absolute inset-0 bg-gradient-to-b from-primary to-primary/90">
-                    <div className="flex justify-between items-center px-6 pt-3 text-white text-xs">
-                      <span>9:41</span>
-                      <div className="flex gap-1">
-                        <div className="w-4 h-2 bg-white/80 rounded-sm"></div>
-                      </div>
-                    </div>
-                    
-                    <div className="p-4 mt-2">
-                      <div className="flex items-center justify-center mb-6">
-                        <img src={cuidameLogo} alt="Cuidame" className="h-8 brightness-0 invert" />
-                      </div>
-                      
-                      <div className="bg-white rounded-2xl p-4 mb-3 shadow-lg">
-                        <p className="text-primary font-semibold text-sm mb-1">Olá!</p>
-                        <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-3 mb-2">
-                          <p className="text-xs text-foreground font-medium">Sou Cliente ou Colaborador do Grupo Altevita</p>
-                          <p className="text-[10px] text-muted-foreground mt-1">Tenho um familiar ou paciente em uma unidade do Grupo Altevita</p>
-                        </div>
-                        <div className="bg-cyan-50 border border-cyan-200 rounded-xl p-3">
-                          <p className="text-xs text-foreground font-medium">Não sou Cliente. Quero usar o app para cuidar da saúde de alguém</p>
-                          <p className="text-[10px] text-muted-foreground mt-1">Versão para famílias, cuidadores e pacientes</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-foreground/10 rounded-b-2xl"></div>
-                </div>
-
-                {/* Second Phone */}
-                <div className="absolute -right-10 md:-right-16 top-8 w-[200px] md:w-[240px] h-[400px] md:h-[480px] bg-white rounded-[2.5rem] shadow-xl border-6 border-foreground/10 overflow-hidden">
-                  <div className="absolute inset-0 bg-white">
-                    <div className="bg-primary p-3">
-                      <div className="flex items-center justify-center">
-                        <img src={cuidameLogo} alt="Cuidame" className="h-6 brightness-0 invert" />
-                      </div>
-                    </div>
-                    <div className="p-3">
-                      <p className="text-xs font-semibold text-foreground mb-2">Deixe-me lhe apresentar o CUIDAME</p>
-                      <div className="flex justify-center mb-2">
-                        <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
-                          <span className="text-2xl">💚</span>
-                        </div>
-                      </div>
-                      <p className="text-[9px] text-muted-foreground text-center leading-relaxed">
-                        Organize a saúde das pessoas sob seus cuidados, sejam familiares ou pacientes.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Phone Mockup Image */}
+            <motion.div 
+              className="relative flex justify-center lg:justify-end cursor-pointer"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.03, y: -5 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            >
+              <img 
+                src={familiasHeroMockup} 
+                alt="App Cuidame em dois smartphones mostrando tela de seleção de perfil e apresentação do app" 
+                className="w-full max-w-[500px] lg:max-w-[600px] h-auto drop-shadow-2xl transition-shadow duration-300 hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
