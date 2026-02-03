@@ -2,18 +2,14 @@ import cuidameLogo from "@/assets/cuidame-logo.png";
 
 const footerLinks = {
   produto: [
-    { label: "Para Famílias", href: "#familias" },
-    { label: "Para Empresas", href: "#empresas" },
-    { label: "Preços", href: "#precos" },
+    { label: "Para Famílias", href: "/familias" },
+    { label: "Para Empresas", href: "/empresas" },
+    { label: "Preços", href: "/precos" },
   ],
   suporte: [
-    { label: "Central de Ajuda", href: "#" },
-    { label: "Contato", href: "#" },
-    { label: "Privacidade", href: "#" },
-  ],
-  baixeApp: [
-    { label: "App Store", href: "https://apps.apple.com/us/app/cuidame-gestor-de-sa%C3%BAde/id6744027992" },
-    { label: "Google Play", href: "#" },
+    { label: "Central de Ajuda", href: "/ajuda" },
+    { label: "Contato", href: "mailto:contato@cuidame.app" },
+    { label: "Privacidade", href: "/privacidade" },
   ],
 };
 
