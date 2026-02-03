@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { MapPin, MessageSquare, GraduationCap, BarChart3, Check } from "lucide-react";
 import cuidameLogo from "@/assets/cuidame-logo.png";
+import empresasHeroMockup from "@/assets/empresas-hero-mockup.png";
 import { motion } from "framer-motion";
 
 const Empresas = () => {
@@ -70,77 +71,20 @@ const Empresas = () => {
               </Button>
             </div>
 
-            {/* Desktop Mockup */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative">
-                {/* Laptop Frame */}
-                <div className="relative w-[400px] md:w-[500px] h-[280px] md:h-[320px] bg-foreground/10 rounded-t-lg overflow-hidden shadow-2xl">
-                  {/* Screen */}
-                  <div className="absolute inset-2 bg-white rounded overflow-hidden">
-                    <div className="bg-primary p-2 flex items-center gap-2">
-                      <img src={cuidameLogo} alt="Cuidame" className="h-4 brightness-0 invert" />
-                      <span className="text-white text-xs">Gerenciamento de Pré-registros</span>
-                    </div>
-                    <div className="p-3 text-xs">
-                      <div className="flex gap-4">
-                        <div className="flex-1">
-                          <div className="bg-gray-100 rounded p-2 mb-2">
-                            <p className="text-[10px] font-medium">Escalas</p>
-                          </div>
-                          <div className="space-y-1">
-                            <div className="bg-gray-50 p-1 rounded text-[8px]">Maria Silva - Cuidador</div>
-                            <div className="bg-gray-50 p-1 rounded text-[8px]">João Santos - Enfermeiro</div>
-                            <div className="bg-gray-50 p-1 rounded text-[8px]">Ana Costa - Cuidador</div>
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <div className="bg-accent/20 rounded p-2 mb-2">
-                            <p className="text-[10px] font-medium text-accent">Usuários Ativos</p>
-                          </div>
-                          <div className="space-y-1">
-                            <div className="flex items-center gap-1 text-[8px]">
-                              <div className="w-4 h-4 bg-accent/30 rounded-full"></div>
-                              <span>Benedita Cruz</span>
-                              <span className="ml-auto bg-accent text-white px-1 rounded text-[6px]">Ativo</span>
-                            </div>
-                            <div className="flex items-center gap-1 text-[8px]">
-                              <div className="w-4 h-4 bg-accent/30 rounded-full"></div>
-                              <span>Roberto Lima</span>
-                              <span className="ml-auto bg-accent text-white px-1 rounded text-[6px]">Ativo</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* Laptop Base */}
-                <div className="w-[420px] md:w-[540px] h-4 bg-foreground/20 rounded-b-lg mx-auto"></div>
-                <div className="w-[180px] md:w-[200px] h-2 bg-foreground/15 rounded-b mx-auto"></div>
-
-                {/* Phone overlay */}
-                <div className="absolute -right-4 md:right-0 bottom-0 w-[140px] md:w-[160px] h-[280px] md:h-[320px] bg-white rounded-[2rem] shadow-xl border-4 border-foreground/10 overflow-hidden">
-                  <div className="absolute inset-0 bg-white">
-                    <div className="bg-primary p-2">
-                      <img src={cuidameLogo} alt="Cuidame" className="h-4 brightness-0 invert mx-auto" />
-                    </div>
-                    <div className="p-2">
-                      <p className="text-[8px] font-semibold text-foreground mb-2">Escalas de Hoje</p>
-                      <div className="space-y-1">
-                        <div className="bg-accent/10 p-1.5 rounded text-[7px]">
-                          <p className="font-medium">08:00 - 14:00</p>
-                          <p className="text-muted-foreground">Maria - Paciente João</p>
-                        </div>
-                        <div className="bg-accent/10 p-1.5 rounded text-[7px]">
-                          <p className="font-medium">14:00 - 20:00</p>
-                          <p className="text-muted-foreground">Ana - Paciente Maria</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Desktop & Phone Mockup Image */}
+            <motion.div 
+              className="relative flex justify-center lg:justify-end cursor-pointer"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.03, y: -5 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            >
+              <img 
+                src={empresasHeroMockup} 
+                alt="App Cuidame mostrando painel de gerenciamento e app mobile" 
+                className="w-full max-w-[550px] lg:max-w-[650px] h-auto drop-shadow-2xl transition-shadow duration-300 hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
