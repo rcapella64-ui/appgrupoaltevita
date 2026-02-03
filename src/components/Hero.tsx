@@ -90,15 +90,16 @@ const Hero = () => {
 
           {/* Phone Mockup Image */}
           <motion.div 
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center lg:justify-end cursor-pointer"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.03, y: -5 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           >
             <img 
               src={heroMockup} 
               alt="App Cuidame em dois smartphones mostrando tela de login e seleção de perfil" 
-              className="w-full max-w-[500px] lg:max-w-[600px] h-auto drop-shadow-2xl"
+              className="w-full max-w-[500px] lg:max-w-[600px] h-auto drop-shadow-2xl transition-shadow duration-300 hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
             />
           </motion.div>
         </div>
