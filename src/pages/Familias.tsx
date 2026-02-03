@@ -343,12 +343,12 @@ const Familias = () => {
               <div className="mb-6">
                 <p className="text-xs font-semibold text-foreground mb-2">Funcionalidades:</p>
                 <ul className="space-y-1 text-xs text-muted-foreground">
-                  <li>• Prescrições Médicas</li>
-                  <li>• Prescrição de Cuidados</li>
-                  <li>• Escala de cuidadores</li>
-                  <li>• Rotinas de saúde</li>
-                  <li>• Registro e atuação de gastos</li>
-                  <li>• Conteúdos Básicos</li>
+                  <li>+ Prescrição Médica</li>
+                  <li>+ Prescrição de Cuidados</li>
+                  <li>+ Escala de cuidadores</li>
+                  <li>+ Rotina de saúde</li>
+                  <li>+ Registro e divisão de gastos</li>
+                  <li>+ Conteúdos Básicos</li>
                 </ul>
               </div>
 
@@ -386,12 +386,12 @@ const Familias = () => {
               <div className="mb-6">
                 <p className="text-xs font-semibold text-foreground mb-2">Funcionalidades:</p>
                 <ul className="space-y-1 text-xs text-muted-foreground">
-                  <li>• Todas do plano gratuito</li>
-                  <li>• Registro de consultas de saúde</li>
-                  <li>• Registro de exames</li>
-                  <li>• Agenda personalizada por paciente</li>
-                  <li>• Avaliação de Enfermagem</li>
-                  <li>• Conteúdos exclusivos</li>
+                  <li>+ Todas do plano gratuito</li>
+                  <li>+ Registros de consultas de saúde</li>
+                  <li>+ Registros de exames</li>
+                  <li>+ Agenda personalizada por paciente</li>
+                  <li>+ Avaliações de Enfermagem</li>
+                  <li>+ Conteúdos exclusivos</li>
                 </ul>
               </div>
 

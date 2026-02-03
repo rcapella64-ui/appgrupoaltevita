@@ -1,30 +1,40 @@
 import { Check } from "lucide-react";
 import { Button } from "./ui/button";
 
-const freePlanFeatures = [
+const freePlanAccounts = [
   "1 Paciente",
-  "2 Usuários (1 Gestor ou 1 Cuidador)",
-  "2 Famílias no Dashboard do Cuidador",
-  "3 Cuidadores (Familiares ou Profissionais)",
+  "1 Familiar (Gestor de Cuidado)",
+  "2 Cuidadores (Familiares ou Profissionais)",
 ];
 
-const freeFeatures = [
+const freePlanFeatures = [
   "Prescrição Médica",
   "Prescrição de Cuidados",
-  "Escala de cuidados",
-  "Rotina do quer",
-  "Registro de vitais de sinais",
+  "Escala de cuidadores",
+  "Rotina de saúde",
+  "Registro e divisão de gastos",
   "Conteúdos Básicos",
 ];
 
+const premiumPlanAccounts = [
+  "2 Pacientes",
+  "2 Familiares (Gestores de Cuidado)",
+  "2 Cuidadores (Familiares ou Profissionais)",
+];
+
 const premiumPlanFeatures = [
-  "Todas do plano gratuito +",
-  "Usuário de apoio e criação",
-  "Acesso aos relatórios de saúde",
-  "Registro de exames",
-  "Acesso personalizado por paciente",
-  "Avaliação de Enfermagem",
+  "Todas do plano gratuito",
+  "Registros de consultas de saúde",
+  "Registros de exames",
+  "Agenda personalizada por paciente",
+  "Avaliações de Enfermagem",
   "Conteúdos exclusivos",
+];
+
+const additionalUserFeatures = [
+  "+1 Pacientes ou",
+  "+1 Familiar (Gestores de Cuidado) ou",
+  "+1 Cuidadores (Familiares ou Profissionais)",
 ];
 
 export function Pricing() {
@@ -47,34 +57,33 @@ export function Pricing() {
           {/* Free Plan */}
           <div className="bg-white rounded-2xl border border-border p-6 hover:shadow-lg transition-shadow">
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-foreground mb-1">Plano Gratuito</h3>
               <div className="flex items-baseline gap-1">
                 <span className="text-4xl font-bold text-foreground">Grátis</span>
                 <span className="text-muted-foreground text-sm">para sempre</span>
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                Perfeito para quem quer testar o Cuidame
+                Ideal para famílias iniciando o cuidado
               </p>
             </div>
 
             <div className="mb-6">
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Limites</p>
+              <p className="text-xs font-semibold text-foreground mb-3">Contas:</p>
               <ul className="space-y-2">
-                {freePlanFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-foreground">
+                {freePlanAccounts.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-foreground">
                     <span className="text-muted-foreground">•</span>
-                    {feature}
+                    {item}
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="mb-6">
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Funcionalidades</p>
+              <p className="text-xs font-semibold text-foreground mb-3">Funcionalidades:</p>
               <ul className="space-y-2">
-                {freeFeatures.map((feature) => (
+                {freePlanFeatures.map((feature) => (
                   <li key={feature} className="flex items-center gap-2 text-sm text-foreground">
-                    <Check className="w-4 h-4 text-accent flex-shrink-0" />
+                    <span className="text-muted-foreground">+</span>
                     {feature}
                   </li>
                 ))}
@@ -95,69 +104,79 @@ export function Pricing() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-foreground mb-1">Plano Premium</h3>
               <div className="flex items-baseline gap-1">
                 <span className="text-sm text-muted-foreground">R$</span>
                 <span className="text-4xl font-bold text-foreground">9,90</span>
                 <span className="text-muted-foreground text-sm">/mês</span>
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                Perfeito para quem quer o máximo do Cuidame
+                Para famílias que querem mais controle
               </p>
             </div>
 
             <div className="mb-6">
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Funcionalidades</p>
+              <p className="text-xs font-semibold text-foreground mb-3">Contas:</p>
+              <ul className="space-y-2">
+                {premiumPlanAccounts.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-foreground">
+                    <span className="text-muted-foreground">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mb-6">
+              <p className="text-xs font-semibold text-foreground mb-3">Funcionalidades:</p>
               <ul className="space-y-2">
                 {premiumPlanFeatures.map((feature) => (
                   <li key={feature} className="flex items-center gap-2 text-sm text-foreground">
-                    <Check className="w-4 h-4 text-accent flex-shrink-0" />
+                    <span className="text-muted-foreground">+</span>
                     {feature}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <p className="text-xs text-muted-foreground mb-4 text-center">
-              Aproveite os recursos do Plano anualmente pela metade. Acesse por R$7.00/mês
-            </p>
+            <div className="bg-accent/10 rounded-lg p-3 mb-4 text-center">
+              <p className="text-xs text-accent">
+                Aproveite todos os recursos do Plano Premium durante o mês de lançamento do aplicativo Cuidame (até 01/03/2026)
+              </p>
+            </div>
 
             <Button className="w-full bg-accent hover:bg-accent/90 text-white rounded-full">
-              Assinar Premium
+              Assinar Premium →
             </Button>
-
-            <p className="text-xs text-muted-foreground mt-4 text-center">
-              Ver todos os detalhes nos planos →
-            </p>
           </div>
 
           {/* Additional Users */}
-          <div className="bg-secondary/50 rounded-2xl p-6">
+          <div className="bg-secondary/30 rounded-2xl p-6 border border-dashed border-border">
             <h3 className="text-lg font-semibold text-foreground mb-2">
               Inclua mais pessoas na sua conta
             </h3>
-            <div className="flex items-baseline gap-1 mb-4">
-              <span className="text-2xl font-bold text-foreground">+ R$ 2,90</span>
+            <div className="flex items-baseline gap-1 mb-2">
+              <span className="text-2xl font-bold text-accent">+ R$ 2,90</span>
               <span className="text-muted-foreground text-sm">/mês</span>
             </div>
+            <p className="text-sm text-muted-foreground mb-6">
+              por usuário adicional
+            </p>
             
-            <p className="text-sm text-muted-foreground mb-4">
-              Cada pessoa adicionada tem acesso a:
+            <p className="text-sm text-foreground mb-4">
+              Você poderá cadastrar mais um usuário:
             </p>
 
             <ul className="space-y-2 mb-6">
-              <li className="flex items-center gap-2 text-sm text-foreground">
-                <Check className="w-4 h-4 text-accent flex-shrink-0" />
-                1 Paciente
-              </li>
-              <li className="flex items-center gap-2 text-sm text-foreground">
-                <Check className="w-4 h-4 text-accent flex-shrink-0" />
-                1 Familiar / Gestor ou Cuidador ou Profissional
-              </li>
+              {additionalUserFeatures.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-foreground">
+                  <span className="text-muted-foreground">•</span>
+                  {item}
+                </li>
+              ))}
             </ul>
 
-            <Button variant="outline" className="w-full rounded-full">
-              Criar usuário incluso
+            <Button variant="outline" className="w-full rounded-full bg-accent/10 border-accent/30 text-accent hover:bg-accent/20">
+              Adicionar Usuário
             </Button>
           </div>
         </div>
