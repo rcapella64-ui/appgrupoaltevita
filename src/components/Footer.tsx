@@ -12,7 +12,7 @@ const footerLinks = {
     { label: "Privacidade", href: "#" },
   ],
   baixeApp: [
-    { label: "App Store", href: "#" },
+    { label: "App Store", href: "https://apps.apple.com/us/app/cuidame-gestor-de-sa%C3%BAde/id6744027992" },
     { label: "Google Play", href: "#" },
   ],
 };
@@ -80,7 +80,9 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground mb-4 text-sm">Baixe o App</h4>
             <div className="space-y-2">
               <a
-                href="#"
+                href="https://apps.apple.com/us/app/cuidame-gestor-de-sa%C3%BAde/id6744027992"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-foreground text-background px-3 py-2 rounded-lg text-sm hover:bg-foreground/90 transition-colors"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

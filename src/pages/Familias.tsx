@@ -65,7 +65,9 @@ const Familias = () => {
               {/* App Store Buttons */}
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="#"
+                  href="https://apps.apple.com/us/app/cuidame-gestor-de-sa%C3%BAde/id6744027992"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-foreground text-background px-4 py-2.5 rounded-lg hover:bg-foreground/90 transition-colors"
                 >
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
