@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, FileText, Clock, Check } from "lucide-react";
 import cuidameLogo from "@/assets/cuidame-logo.png";
+import { motion } from "framer-motion";
 
 const Familias = () => {
   return (
@@ -10,10 +11,38 @@ const Familias = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden">
-        {/* Background curve */}
-        <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-[70%] h-[120%] bg-gradient-to-br from-accent/30 via-accent/20 to-cuidame-teal/10 rounded-bl-[100%] -translate-y-[10%]" />
+      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-accent/5">
+        {/* Futuristic Glassmorphism Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-cuidame-teal/10" />
+          
+          <motion.div 
+            className="absolute top-20 right-[10%] w-32 h-32 rounded-3xl bg-white/40 backdrop-blur-xl border border-white/50 shadow-xl"
+            animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div 
+            className="absolute top-40 right-[25%] w-20 h-20 rounded-2xl bg-accent/20 backdrop-blur-lg border border-accent/30 shadow-lg"
+            animate={{ y: [0, 15, 0], rotate: [0, -8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          />
+          <motion.div 
+            className="absolute bottom-32 left-[5%] w-40 h-40 rounded-[2rem] bg-cuidame-teal/15 backdrop-blur-xl border border-cuidame-teal/25 shadow-xl"
+            animate={{ y: [0, -25, 0], rotate: [0, -5, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          />
+          <motion.div 
+            className="absolute top-1/3 left-[15%] w-16 h-16 rounded-xl bg-white/50 backdrop-blur-md border border-white/60 shadow-md"
+            animate={{ y: [0, 20, 0], x: [0, 10, 0], rotate: [0, 10, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+          />
+          <motion.div 
+            className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-gradient-to-br from-accent/20 to-cuidame-teal/10 backdrop-blur-3xl"
+            animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.7, 0.5] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          />
+          
+          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(27,67,50,0.08)_1px,transparent_1px)] bg-[size:24px_24px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
