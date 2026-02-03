@@ -3,52 +3,75 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-white via-accent/5 to-cuidame-teal/10">
-      {/* Modern gradient mesh background */}
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-accent/5">
+      {/* Futuristic Glassmorphism Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Primary gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-accent/8 to-cuidame-teal/15" />
+        {/* Base gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-cuidame-teal/10" />
         
-        {/* Animated gradient orbs */}
+        {/* Floating Glass Shapes */}
         <motion.div 
-          className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-gradient-radial from-accent/25 via-accent/10 to-transparent"
+          className="absolute top-20 right-[10%] w-32 h-32 rounded-3xl bg-white/40 backdrop-blur-xl border border-white/50 shadow-xl"
           animate={{
-            scale: [1, 1.15, 1],
-            opacity: [0.6, 0.8, 0.6],
+            y: [0, -20, 0],
+            rotate: [0, 5, 0],
           }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute top-1/2 -left-24 w-[400px] h-[400px] rounded-full bg-gradient-radial from-cuidame-teal/20 via-cuidame-teal/5 to-transparent"
+          className="absolute top-40 right-[25%] w-20 h-20 rounded-2xl bg-accent/20 backdrop-blur-lg border border-accent/30 shadow-lg"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.5, 0.7, 0.5],
+            y: [0, 15, 0],
+            rotate: [0, -8, 0],
           }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         />
         <motion.div 
-          className="absolute -bottom-20 right-1/3 w-[350px] h-[350px] rounded-full bg-gradient-radial from-accent/15 via-accent/5 to-transparent"
+          className="absolute bottom-32 left-[5%] w-40 h-40 rounded-[2rem] bg-cuidame-teal/15 backdrop-blur-xl border border-cuidame-teal/25 shadow-xl"
+          animate={{
+            y: [0, -25, 0],
+            rotate: [0, -5, 0],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
+        <motion.div 
+          className="absolute top-1/3 left-[15%] w-16 h-16 rounded-xl bg-white/50 backdrop-blur-md border border-white/60 shadow-md"
+          animate={{
+            y: [0, 20, 0],
+            x: [0, 10, 0],
+            rotate: [0, 10, 0],
+          }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+        />
+        <motion.div 
+          className="absolute bottom-20 right-[15%] w-24 h-24 rounded-2xl bg-accent/25 backdrop-blur-lg border border-accent/40 shadow-lg"
+          animate={{
+            y: [0, -15, 0],
+            rotate: [0, 8, 0],
+          }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+        />
+        
+        {/* Large floating circle */}
+        <motion.div 
+          className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-gradient-to-br from-accent/20 to-cuidame-teal/10 backdrop-blur-3xl"
           animate={{
             scale: [1, 1.1, 1],
+            opacity: [0.5, 0.7, 0.5],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute -bottom-40 -right-20 w-96 h-96 rounded-full bg-gradient-to-tl from-cuidame-teal/15 to-accent/10 backdrop-blur-3xl"
+          animate={{
+            scale: [1, 1.15, 1],
             opacity: [0.4, 0.6, 0.4],
           }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
-        
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(27,67,50,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(27,67,50,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+        {/* Dot pattern overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(27,67,50,0.08)_1px,transparent_1px)] bg-[size:24px_24px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
