@@ -3,47 +3,53 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
-      {/* Animated decorative green blobs */}
-      <motion.div 
-        className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-accent/50 to-cuidame-teal/35 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4"
-        animate={{
-          scale: [1, 1.25, 1],
-          x: [0, 60, 0],
-          y: [0, -40, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div 
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-accent/40 to-cuidame-teal/25 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4"
-        animate={{
-          scale: [1, 1.3, 1],
-          x: [0, -50, 0],
-          y: [0, 60, 0],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div 
-        className="absolute top-1/2 left-1/3 w-[350px] h-[350px] bg-gradient-to-br from-accent/35 to-cuidame-teal/30 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.35, 1],
-          x: [0, 80, 0],
-          y: [0, -60, 0],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-br from-white via-accent/5 to-cuidame-teal/10">
+      {/* Modern gradient mesh background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Primary gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-accent/8 to-cuidame-teal/15" />
+        
+        {/* Animated gradient orbs */}
+        <motion.div 
+          className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-gradient-radial from-accent/25 via-accent/10 to-transparent"
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.6, 0.8, 0.6],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div 
+          className="absolute top-1/2 -left-24 w-[400px] h-[400px] rounded-full bg-gradient-radial from-cuidame-teal/20 via-cuidame-teal/5 to-transparent"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.5, 0.7, 0.5],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div 
+          className="absolute -bottom-20 right-1/3 w-[350px] h-[350px] rounded-full bg-gradient-radial from-accent/15 via-accent/5 to-transparent"
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.4, 0.6, 0.4],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(27,67,50,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(27,67,50,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
