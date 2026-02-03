@@ -115,152 +115,153 @@ const Familias = () => {
       </section>
 
       {/* Como o Cuidame ajuda você Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-gradient-to-b from-white via-accent/5 to-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-              Como o Cuidame ajuda você
+          {/* Header */}
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-block px-4 py-1.5 bg-accent/10 text-accent text-sm font-medium rounded-full mb-4">
+              Funcionalidades
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Como o Cuidame <span className="text-accent">ajuda você</span>
             </h2>
-            <p className="text-muted-foreground max-w-md mx-auto">
+            <p className="text-muted-foreground max-w-lg mx-auto text-lg">
               Funcionalidades pensadas para dar tranquilidade à sua família
             </p>
-          </div>
+          </motion.div>
 
-          {/* Feature 1 - Left aligned */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
-            <div>
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                <Clock className="w-6 h-6 text-accent" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
-                Não pergunte, saiba.
-              </h3>
-              <p className="text-muted-foreground">
-                Monitore se a medicação foi dada e veja os sinais vitais em tempo real.
-              </p>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-[220px] h-[440px] bg-white rounded-[2.5rem] shadow-xl border-6 border-foreground/10 overflow-hidden">
-                <div className="absolute inset-0 bg-white">
-                  <div className="bg-primary p-3">
-                    <img src={cuidameLogo} alt="Cuidame" className="h-5 brightness-0 invert mx-auto" />
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <motion.div
+              className="group relative bg-white rounded-3xl p-8 shadow-lg border border-border/50 hover:shadow-xl hover:border-accent/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-gradient-to-br from-accent to-cuidame-teal rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-accent/20">
+                  <Clock className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Não pergunte, saiba.
+                </h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Monitore se a medicação foi dada e veja os sinais vitais em tempo real.
+                </p>
+                
+                {/* Mini Preview */}
+                <div className="bg-accent/5 rounded-xl p-4 space-y-2">
+                  <div className="flex justify-between items-center bg-white rounded-lg p-2 shadow-sm">
+                    <span className="text-xs font-medium text-foreground">Pressão Arterial</span>
+                    <span className="text-xs text-accent font-bold">120/80</span>
                   </div>
-                  <div className="p-3">
-                    <p className="text-[10px] font-semibold text-foreground mb-2">Acompanhamento Diário</p>
-                    <div className="space-y-2">
-                      <div className="bg-accent/10 rounded-lg p-2">
-                        <div className="flex justify-between items-center">
-                          <span className="text-[9px] font-medium">Pressão Arterial</span>
-                          <span className="text-[9px] text-accent font-bold">120/80</span>
-                        </div>
-                      </div>
-                      <div className="bg-accent/10 rounded-lg p-2">
-                        <div className="flex justify-between items-center">
-                          <span className="text-[9px] font-medium">Glicemia</span>
-                          <span className="text-[9px] text-accent font-bold">95 mg/dL</span>
-                        </div>
-                      </div>
-                      <div className="bg-green-100 rounded-lg p-2">
-                        <div className="flex items-center gap-2">
-                          <Check className="w-3 h-3 text-green-600" />
-                          <span className="text-[9px] font-medium text-green-700">Medicação administrada</span>
-                        </div>
-                      </div>
+                  <div className="flex justify-between items-center bg-white rounded-lg p-2 shadow-sm">
+                    <span className="text-xs font-medium text-foreground">Glicemia</span>
+                    <span className="text-xs text-accent font-bold">95 mg/dL</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-green-50 rounded-lg p-2">
+                    <Check className="w-4 h-4 text-green-600" />
+                    <span className="text-xs font-medium text-green-700">Medicação administrada</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Feature 2 */}
+            <motion.div
+              className="group relative bg-white rounded-3xl p-8 shadow-lg border border-border/50 hover:shadow-xl hover:border-accent/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-gradient-to-br from-accent to-cuidame-teal rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-accent/20">
+                  <MessageSquare className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Comunicação sem ruído.
+                </h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Um chat exclusivo para saúde. Nada de mensagens perdidas no WhatsApp.
+                </p>
+                
+                {/* Chat Preview */}
+                <div className="bg-accent/5 rounded-xl p-4 space-y-2">
+                  <div className="bg-white rounded-lg p-2 shadow-sm max-w-[85%]">
+                    <p className="text-[10px] font-semibold text-accent">Enfermeira Ana</p>
+                    <p className="text-xs text-foreground">Medicação das 8h administrada ✓</p>
+                  </div>
+                  <div className="bg-accent/20 rounded-lg p-2 shadow-sm max-w-[75%] ml-auto">
+                    <p className="text-xs text-foreground">Obrigada pela atualização!</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-2 shadow-sm max-w-[85%]">
+                    <p className="text-[10px] font-semibold text-accent">Cuidadora Maria</p>
+                    <p className="text-xs text-foreground">Paciente almoçou bem hoje 🍽️</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Feature 3 */}
+            <motion.div
+              className="group relative bg-white rounded-3xl p-8 shadow-lg border border-border/50 hover:shadow-xl hover:border-accent/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-gradient-to-br from-accent to-cuidame-teal rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-accent/20">
+                  <FileText className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  Histórico na mão.
+                </h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Leve o histórico completo para a consulta médica com um toque.
+                </p>
+                
+                {/* History Preview */}
+                <div className="bg-accent/5 rounded-xl p-4 space-y-2">
+                  <div className="bg-white rounded-lg p-2 shadow-sm border-l-4 border-accent">
+                    <p className="text-xs font-semibold text-foreground">Janeiro 2026</p>
+                    <div className="flex gap-2 mt-1">
+                      <span className="text-[10px] bg-accent/10 px-2 py-0.5 rounded-full">12 registros</span>
+                      <span className="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Estável</span>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg p-2 shadow-sm border-l-4 border-accent/60">
+                    <p className="text-xs font-semibold text-foreground">Dezembro 2025</p>
+                    <div className="flex gap-2 mt-1">
+                      <span className="text-[10px] bg-accent/10 px-2 py-0.5 rounded-full">15 registros</span>
+                      <span className="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Estável</span>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg p-2 shadow-sm border-l-4 border-yellow-400">
+                    <p className="text-xs font-semibold text-foreground">Novembro 2025</p>
+                    <div className="flex gap-2 mt-1">
+                      <span className="text-[10px] bg-accent/10 px-2 py-0.5 rounded-full">10 registros</span>
+                      <span className="text-[10px] bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">Atenção</span>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Feature 2 - Right aligned */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
-            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
-              <div className="relative w-[220px] h-[440px] bg-white rounded-[2.5rem] shadow-xl border-6 border-foreground/10 overflow-hidden">
-                <div className="absolute inset-0 bg-white">
-                  <div className="bg-primary p-3">
-                    <img src={cuidameLogo} alt="Cuidame" className="h-5 brightness-0 invert mx-auto" />
-                  </div>
-                  <div className="p-3">
-                    <p className="text-[10px] font-semibold text-foreground mb-2">Chat da Família</p>
-                    <div className="space-y-2">
-                      <div className="bg-gray-100 rounded-lg p-2 max-w-[80%]">
-                        <p className="text-[8px] font-medium text-accent">Enfermeira Ana</p>
-                        <p className="text-[8px]">Medicação das 8h administrada ✓</p>
-                      </div>
-                      <div className="bg-accent/20 rounded-lg p-2 max-w-[80%] ml-auto">
-                        <p className="text-[8px]">Obrigada pela atualização!</p>
-                      </div>
-                      <div className="bg-gray-100 rounded-lg p-2 max-w-[80%]">
-                        <p className="text-[8px] font-medium text-accent">Cuidadora Maria</p>
-                        <p className="text-[8px]">Paciente se alimentou bem hoje</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                <MessageSquare className="w-6 h-6 text-accent" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
-                Comunicação sem ruído.
-              </h3>
-              <p className="text-muted-foreground">
-                Um chat exclusivo para saúde. Nada de mensagens perdidas no WhatsApp pessoal.
-              </p>
-            </div>
-          </div>
-
-          {/* Feature 3 - Left aligned */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
-                <FileText className="w-6 h-6 text-accent" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
-                Histórico na mão.
-              </h3>
-              <p className="text-muted-foreground">
-                Leve o histórico completo de pressão, glicemia e humor para a consulta médica.
-              </p>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-[220px] h-[440px] bg-white rounded-[2.5rem] shadow-xl border-6 border-foreground/10 overflow-hidden">
-                <div className="absolute inset-0 bg-white">
-                  <div className="bg-primary p-3">
-                    <img src={cuidameLogo} alt="Cuidame" className="h-5 brightness-0 invert mx-auto" />
-                  </div>
-                  <div className="p-3">
-                    <p className="text-[10px] font-semibold text-foreground mb-2">Histórico de Saúde</p>
-                    <div className="space-y-2">
-                      <div className="border border-border rounded-lg p-2">
-                        <p className="text-[8px] font-medium">Janeiro 2026</p>
-                        <div className="flex gap-2 mt-1">
-                          <span className="text-[7px] bg-accent/10 px-1 rounded">12 registros</span>
-                          <span className="text-[7px] bg-green-100 px-1 rounded text-green-700">Estável</span>
-                        </div>
-                      </div>
-                      <div className="border border-border rounded-lg p-2">
-                        <p className="text-[8px] font-medium">Dezembro 2025</p>
-                        <div className="flex gap-2 mt-1">
-                          <span className="text-[7px] bg-accent/10 px-1 rounded">15 registros</span>
-                          <span className="text-[7px] bg-green-100 px-1 rounded text-green-700">Estável</span>
-                        </div>
-                      </div>
-                      <div className="border border-border rounded-lg p-2">
-                        <p className="text-[8px] font-medium">Novembro 2025</p>
-                        <div className="flex gap-2 mt-1">
-                          <span className="text-[7px] bg-accent/10 px-1 rounded">10 registros</span>
-                          <span className="text-[7px] bg-yellow-100 px-1 rounded text-yellow-700">Atenção</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
