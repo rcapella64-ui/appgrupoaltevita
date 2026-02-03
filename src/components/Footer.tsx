@@ -91,7 +91,9 @@ const Footer = () => {
                 <span>App Store</span>
               </a>
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=br.com.cuidame&hl=pt"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-foreground text-background px-3 py-2 rounded-lg text-sm hover:bg-foreground/90 transition-colors"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

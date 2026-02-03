@@ -79,7 +79,9 @@ const Familias = () => {
                   </div>
                 </a>
                 <a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=br.com.cuidame&hl=pt"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-foreground text-background px-4 py-2.5 rounded-lg hover:bg-foreground/90 transition-colors"
                 >
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
