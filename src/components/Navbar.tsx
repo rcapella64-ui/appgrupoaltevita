@@ -4,11 +4,11 @@ import { Button } from "./ui/button";
 import cuidameLogo from "@/assets/cuidame-logo.png";
 
 const navLinks = [
-  { href: "#", label: "Início" },
-  { href: "#familias", label: "Para Famílias" },
-  { href: "#empresas", label: "Para Empresas" },
-  { href: "#precos", label: "Preços" },
-  { href: "#ajuda", label: "Ajuda" },
+  { href: "/", label: "Início" },
+  { href: "/familias", label: "Para Famílias" },
+  { href: "/empresas", label: "Para Empresas" },
+  { href: "/#precos", label: "Preços" },
+  { href: "/#ajuda", label: "Ajuda" },
 ];
 
 const Navbar = () => {
