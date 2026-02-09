@@ -36,6 +36,6 @@ jobs:
 
         password: ${{ secrets.PASS }}
 
-        server-dir: /home/cuidamegrupoalte4/
+        server-dir: public_html/
 
-        local-dir: /home/cuidamegrupoalte4/ 
+        local-dir: html-version/ 
