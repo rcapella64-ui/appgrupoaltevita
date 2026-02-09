@@ -36,4 +36,4 @@ jobs:
 
         server-dir: public_html/
 
-        local-dir: appgrupoaltevita/html-version/
+        local-dir: html-version/
