@@ -1,5 +1,4 @@
 YAML
-
 name: Deploy via FTP (Locaweb)
 
 on:
