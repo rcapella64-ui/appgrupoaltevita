@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuidame | Gestão Integrada de Cuidados de Saúde</title>
+  <meta name="description" content="Cuidame é o aplicativo de gestão integrada de cuidados de saúde pessoais e familiares. Centralize prescrições, agenda, comunicação e acompanhamento clínico em um só lugar.">
+  <meta name="author" content="Grupo Altevita">
+  <meta name="keywords" content="cuidados de saúde, gestão familiar, cuidador, enfermagem, home care, prescrição médica, agenda de cuidados">
+  <meta property="og:title" content="Cuidame | Gestão Integrada de Cuidados de Saúde">
+  <meta property="og:description" content="Centralize o planejamento, execução e comunicação do cuidado de saúde pessoal e familiar com segurança e rastreabilidade.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-image.png">
+  <link rel="canonical" href="https://cuidame.com.br">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="assets/cuidame-logo.png" alt="Cuidame">
+      </a>
+      <nav class="nav-links">
+        <a href="/">Início</a>
+        <a href="familias.html">Para Famílias</a>
+        <a href="empresas.html">Para Empresas</a>
+        <a href="precos.html">Preços</a>
+        <a href="ajuda.html">Ajuda</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://appaltevitacare.com.br/" target="_blank" rel="noopener noreferrer" class="login-link">Entrar</a>
+        <button class="btn btn-primary" data-download>Começar Grátis</button>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Início</a>
+      <a href="familias.html">Para Famílias</a>
+      <a href="empresas.html">Para Empresas</a>
+      <a href="precos.html">Preços</a>
+      <a href="ajuda.html">Ajuda</a>
+      <div class="mobile-actions">
+        <a href="https://appaltevitacare.com.br/" target="_blank" rel="noopener noreferrer">Entrar</a>
+        <button class="btn btn-primary" style="width:100%" data-download>Começar Grátis</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="glass-shape glass-1"></div>
+      <div class="glass-shape glass-2"></div>
+      <div class="glass-shape glass-3"></div>
+      <div class="dot-pattern"></div>
+    </div>
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1>App Completo<br>para o <span class="text-accent">Cuidado</span> de<br>Quem Você Ama.</h1>
+          <p>Gerencie medicações, escalas de cuidadores, evolução clínica e comunicação familiar em um único app seguro e intuitivo.</p>
+          <div class="store-buttons">
+            <a href="https://apps.apple.com/us/app/cuidame-gestor-de-sa%C3%BAde/id6744027992" target="_blank" rel="noopener noreferrer" class="store-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <div><div class="store-label">Baixar na</div><div class="store-name">App Store</div></div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=br.com.cuidame&hl=pt" target="_blank" rel="noopener noreferrer" class="store-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+              <div><div class="store-label">Disponível no</div><div class="store-name">Google Play</div></div>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/hero-mockup.png" alt="App Cuidame em dois smartphones mostrando tela de login e seleção de perfil">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO ARE YOU -->
+  <section class="who-are-you">
+    <div class="container">
+      <div class="section-header">
+        <h2>Quem é você?</h2>
+        <p>Escolha o perfil que melhor se encaixa nas suas necessidades</p>
+      </div>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Para Cuidar de Familiares</h3>
+          <p>Cuide de idosos, doentes ou pessoas com necessidades especiais em casa com ajuda de cuidadores e profissionais de saúde.</p>
+          <a href="familias.html" class="link">Conhecer solução <span>→</span></a>
+        </div>
+        <div class="who-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+          </div>
+          <h3>Para Agências de Home Care</h3>
+          <p>Gestão de equipes, auditoria de prontuário e padronização de processos para empresas de cuidados domiciliares.</p>
+          <a href="empresas.html" class="link">Conhecer solução <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tudo que você precisa em um só lugar</h2>
+        <p>Funcionalidades pensadas para simplificar o cuidado</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Gestão de Perfis</h3>
+          <p>Controle de acesso com Perfis, Gestor, Cuidador e Paciente.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/><path d="m9 11 2 2 4-4"/></svg>
+          </div>
+          <h3>Prescrições Seguras</h3>
+          <p>Armazene de forma segura os registros de prescrições médicas.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Agenda Inteligente</h3>
+          <p>Calendário de consultas, exames e escalas de cuidadores.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+          </div>
+          <h3>Prontuário Digital</h3>
+          <p>Histórico de evolução, intercorrências e registros de saúde.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Chat Integrado</h3>
+          <p>Comunicação direta entre familiares e equipe de cuidadores.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+          </div>
+          <h3>Cuidame Academy</h3>
+          <p>Trilhas de educação e treinamento para cuidadores e familiares.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Preços transparentes</span>
+        <h2>Escolha o plano ideal para <span class="text-accent">você</span></h2>
+        <p>Comece gratuitamente e faça upgrade quando precisar de mais recursos.</p>
+      </div>
+      <div class="pricing-grid">
+        <!-- Free -->
+        <div class="pricing-card">
+          <div class="price">Grátis</div>
+          <span class="price-label">para sempre</span>
+          <p class="plan-desc">Ideal para famílias iniciando o cuidado</p>
+          <p class="section-title">Contas:</p>
+          <ul>
+            <li><span class="bullet">•</span> 1 Paciente</li>
+            <li><span class="bullet">•</span> 1 Familiar (Gestor de Cuidado)</li>
+            <li><span class="bullet">•</span> 2 Cuidadores (Familiares ou Profissionais)</li>
+          </ul>
+          <p class="section-title">Funcionalidades:</p>
+          <ul>
+            <li><span class="bullet">+</span> Prescrição Médica</li>
+            <li><span class="bullet">+</span> Prescrição de Cuidados</li>
+            <li><span class="bullet">+</span> Escala de cuidadores</li>
+            <li><span class="bullet">+</span> Rotina de saúde</li>
+            <li><span class="bullet">+</span> Registro e divisão de gastos</li>
+            <li><span class="bullet">+</span> Conteúdos Básicos</li>
+          </ul>
+          <button class="btn btn-outline" style="width:100%">Criar Conta Grátis</button>
+        </div>
+        <!-- Premium -->
+        <div class="pricing-card featured">
+          <span class="badge-top">Recomendado</span>
+          <div style="display:flex;align-items:baseline;gap:0.25rem">
+            <span class="price-prefix">R$</span>
+            <span class="price">9,90</span>
+            <span class="price-label">/mês</span>
+          </div>
+          <p class="plan-desc">Para famílias que querem mais controle</p>
+          <p class="section-title">Contas:</p>
+          <ul>
+            <li><span class="bullet">•</span> 2 Pacientes</li>
+            <li><span class="bullet">•</span> 2 Familiares (Gestores de Cuidado)</li>
+            <li><span class="bullet">•</span> 2 Cuidadores (Familiares ou Profissionais)</li>
+          </ul>
+          <p class="section-title">Funcionalidades:</p>
+          <ul>
+            <li><span class="bullet">+</span> Todas do plano gratuito</li>
+            <li><span class="bullet">+</span> Registros de consultas de saúde</li>
+            <li><span class="bullet">+</span> Registros de exames</li>
+            <li><span class="bullet">+</span> Agenda personalizada por paciente</li>
+            <li><span class="bullet">+</span> Avaliações de Enfermagem</li>
+            <li><span class="bullet">+</span> Conteúdos exclusivos</li>
+          </ul>
+          <div class="promo-box">
+            <p>Aproveite todos os recursos do Plano Premium durante o mês de lançamento do aplicativo Cuidame (até 01/03/2026)</p>
+          </div>
+          <button class="btn btn-accent" style="width:100%">Assinar Premium →</button>
+        </div>
+        <!-- Addon -->
+        <div class="pricing-card addon">
+          <h3>Inclua mais pessoas na sua conta</h3>
+          <div style="display:flex;align-items:baseline;gap:0.25rem;margin-bottom:0.5rem">
+            <span class="addon-price">+ R$ 2,90</span>
+            <span class="price-label">/mês</span>
+          </div>
+          <p class="plan-desc">por usuário adicional</p>
+          <p style="font-size:0.875rem;margin-bottom:1rem">Você poderá cadastrar mais um usuário:</p>
+          <ul>
+            <li><span class="bullet">•</span> +1 Pacientes ou</li>
+            <li><span class="bullet">•</span> +1 Familiar (Gestores de Cuidado) ou</li>
+            <li><span class="bullet">•</span> +1 Cuidadores (Familiares ou Profissionais)</li>
+          </ul>
+          <button class="btn btn-outline" style="width:100%;background:rgba(45,138,94,0.1);border-color:rgba(45,138,94,0.3);color:var(--accent)">Adicionar Usuário</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Resultados reais</span>
+        <h2>Transforme a forma como você <span class="text-accent-italic">cuida</span></h2>
+        <p>O Cuidame foi projetado para trazer resultados práticos reais para famílias, cuidadores e instituições de saúde.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <p class="stat-value">70%</p>
+          <p class="stat-label">Menos tempo</p>
+          <p class="stat-desc">Reduza o tempo gasto com burocracia e comunicações dispersas</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <p class="stat-value">100%</p>
+          <p class="stat-label">Rastreável</p>
+          <p class="stat-desc">Todo o histórico documentado para auditoria e segurança</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <p class="stat-value">3×</p>
+          <p class="stat-label">Mais eficiência</p>
+          <p class="stat-desc">Equipes de cuidadores mais produtivas e comunicação fluida</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <p class="stat-value">95%</p>
+          <p class="stat-label">Satisfação</p>
+          <p class="stat-desc">Famílias mais tranquilas e felizes com o cuidado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOVE SECTION -->
+  <section class="love-section">
+    <div class="container">
+      <div class="love-grid">
+        <div class="love-image">
+          <div class="frame"></div>
+          <img src="assets/love-section-family.jpg" alt="Família multigeracional cuidando de idosa com carinho e amor">
+        </div>
+        <div class="love-content">
+          <h2>Cuidar de quem amamos é um ato de amor</h2>
+          <p>Sabemos o quão difícil é equilibrar trabalho, vida pessoal e cuidado com nossos entes queridos. O Cuidame foi criado para dar a você tranquilidade, assegurando que você esteja sempre conectado com o cuidado de quem você ama.</p>
+          <ul class="benefits-list">
+            <li><div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Mantenha a saúde em tempo real</li>
+            <li><div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Evite preocupações</li>
+            <li><div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Monte a escala de cuidados</li>
+            <li><div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div> Comunicação simplificada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="container">
+      <div class="section-header">
+        <h2>Confiança é a nossa base</h2>
+        <p>Seus dados estão seguros conosco</p>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">LGPD Compliant</p>
+            <p class="trust-desc">Lei Geral de Proteção de Dados</p>
+          </div>
+        </div>
+        <div class="trust-badge">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div>
+            <p class="trust-title">Dados Criptografados</p>
+            <p class="trust-desc">Proteção end-to-end</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Pronto para transformar o cuidado?</h2>
+      <p>Comece agora gratuitamente e descubra como é fácil cuidar de quem você ama.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-white btn-lg" data-download>Baixar App →</button>
+        <a href="#funcionalidades" class="btn btn-outline-white btn-lg">Saber Mais</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/cuidame-logo.png" alt="Cuidame" style="height:2.5rem">
+          <p>O seu parceiro para gestão de medicação, evolução clínica e comunicação familiar - tudo em um só lugar.</p>
+          <div class="footer-badges">
+            <span>🔒</span><span>LGPD</span><span style="margin:0 0.5rem">•</span><span>📍</span><span>Grupo Altevita</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Produto</h4>
+          <ul>
+            <li><a href="familias.html">Para Famílias</a></li>
+            <li><a href="empresas.html">Para Empresas</a></li>
+            <li><a href="precos.html">Preços</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="ajuda.html">Central de Ajuda</a></li>
+            <li><a href="mailto:contato@cuidame.app">Contato</a></li>
+            <li><a href="privacidade.html">Privacidade</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Baixe o App</h4>
+          <a href="https://apps.apple.com/us/app/cuidame-gestor-de-sa%C3%BAde/id6744027992" target="_blank" rel="noopener noreferrer" class="store-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:1.25rem;height:1.25rem"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <span>App Store</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=br.com.cuidame&hl=pt" target="_blank" rel="noopener noreferrer" class="store-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:1.25rem;height:1.25rem"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> Cuidame - Grupo Altevita. Todos os direitos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="termos.html">Termos de Uso</a>
+          <a href="privacidade.html">Política de Privacidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DOWNLOAD MODAL -->
+  <div class="modal-overlay" id="downloadModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3>Baixe o App Cuidame</h3>
+      <p>Escolha a loja do seu dispositivo:</p>
+      <a href="https://apps.apple.com/us/app/cuidame-gestor-de-sa%C3%BAde/id6744027992" target="_blank" rel="noopener noreferrer" class="store-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div><div class="store-label">Baixar na</div><div class="store-name">App Store</div></div>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=br.com.cuidame&hl=pt" target="_blank" rel="noopener noreferrer" class="store-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+        <div><div class="store-label">Disponível no</div><div class="store-name">Google Play</div></div>
+      </a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
