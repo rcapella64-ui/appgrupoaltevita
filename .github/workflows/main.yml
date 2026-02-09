@@ -38,4 +38,4 @@ jobs:
 
         server-dir: public_html/
 
-        local-dir: html-version/ 
+        local-dir: /home/cuidamegrupoalte4/ 
