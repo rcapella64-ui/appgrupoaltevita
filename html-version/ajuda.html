@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Ajuda | Cuidame</title>
+  <meta name="description" content="Encontre respostas para suas dúvidas sobre o Cuidame. Perguntas frequentes sobre o app, planos, funcionalidades e mais.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .faq-category{margin-bottom:2rem;}
+    .faq-category h3{font-size:1.125rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+    .faq-category h3::before{content:'';width:0.5rem;height:0.5rem;background:var(--accent);border-radius:50%;display:inline-block;}
+    .faq-list{background:#fff;border-radius:0.75rem;border:1px solid var(--border);overflow:hidden;}
+    .faq-item{border-bottom:1px solid var(--border);}
+    .faq-item:last-child{border-bottom:none;}
+    .faq-question{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;cursor:pointer;font-weight:500;background:transparent;border:none;width:100%;text-align:left;font-size:0.9375rem;}
+    .faq-question:hover{background:rgba(45,138,94,0.05);}
+    .faq-question svg{transition:transform 0.3s;flex-shrink:0;width:1.25rem;height:1.25rem;}
+    .faq-item.open .faq-question svg{transform:rotate(180deg);}
+    .faq-answer{padding:0 1.5rem;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;color:var(--muted-foreground);font-size:0.875rem;line-height:1.6;}
+    .faq-item.open .faq-answer{max-height:500px;padding:0 1.5rem 1rem;}
+    .contact-card{background:var(--background);border:1px solid var(--border);border-radius:0.75rem;padding:1.5rem;text-align:center;transition:all 0.3s;}
+    .contact-card:hover{border-color:var(--accent);box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+    .contact-icon{width:3rem;height:3rem;background:rgba(45,138,94,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container">
+      <a href="/" class="logo"><img src="assets/cuidame-logo.png" alt="Cuidame"></a>
+      <nav class="nav-links"><a href="/">Início</a><a href="familias.html">Para Famílias</a><a href="empresas.html">Para Empresas</a><a href="precos.html">Preços</a><a href="ajuda.html">Ajuda</a></nav>
+      <div class="nav-actions"><a href="https://appaltevitacare.com.br/" target="_blank" rel="noopener noreferrer" class="login-link">Entrar</a><button class="btn btn-primary" data-download>Começar Grátis</button></div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu"><a href="/">Início</a><a href="familias.html">Para Famílias</a><a href="empresas.html">Para Empresas</a><a href="precos.html">Preços</a><a href="ajuda.html">Ajuda</a><div class="mobile-actions"><a href="https://appaltevitacare.com.br/" target="_blank" rel="noopener noreferrer">Entrar</a><button class="btn btn-primary" style="width:100%" data-download>Começar Grátis</button></div></div>
+  </header>
+
+  <!-- HERO -->
+  <section style="padding-top:8rem;padding-bottom:3rem;background:#fff;">
+    <div class="container" style="text-align:center;">
+      <span class="badge">Central de Ajuda</span>
+      <h1 style="font-size:2.5rem;font-weight:700;margin:1rem 0;">Como podemos <span class="text-accent">ajudar?</span></h1>
+      <p style="color:var(--muted-foreground);max-width:32rem;margin:0 auto 2rem;">Encontre respostas para suas dúvidas ou entre em contato com nossa equipe de suporte.</p>
+      <div style="max-width:24rem;margin:0 auto;position:relative;">
+        <svg style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);width:1.25rem;height:1.25rem;color:var(--muted-foreground);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" placeholder="Buscar por uma pergunta..." style="width:100%;padding:0.75rem 1rem 0.75rem 3rem;border:1px solid var(--border);border-radius:9999px;font-size:0.875rem;">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding:4rem 0;background:var(--background);">
+    <div class="container" style="max-width:56rem;">
+      <h2 style="font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:2rem;">Perguntas Frequentes</h2>
+
+      <div class="faq-category">
+        <h3>Sobre o App</h3>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question">O que é o Cuidame? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">O Cuidame é um aplicativo de gestão integrada de cuidados de saúde pessoais e familiares. Ele permite que você gerencie medicações, escalas de cuidadores, evolução clínica e comunicação familiar em um único app seguro e intuitivo.</div></div>
+          <div class="faq-item"><button class="faq-question">Para quem é o Cuidame? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">O Cuidame é ideal para famílias que cuidam de idosos ou pessoas que precisam de acompanhamento de saúde em casa, assim como para agências de home care que desejam profissionalizar sua operação.</div></div>
+          <div class="faq-item"><button class="faq-question">O app está disponível para iOS e Android? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Sim! O Cuidame está disponível gratuitamente na App Store (iOS) e no Google Play (Android). Basta baixar e criar sua conta para começar.</div></div>
+          <div class="faq-item"><button class="faq-question">Meus dados estão seguros? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Absolutamente! O Cuidame utiliza criptografia de ponta a ponta e está em conformidade com a LGPD (Lei Geral de Proteção de Dados). Todos os dados de saúde são armazenados de forma segura e só podem ser acessados por pessoas autorizadas.</div></div>
+        </div>
+      </div>
+
+      <div class="faq-category">
+        <h3>Planos e Pagamentos</h3>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question">Qual a diferença entre o plano Gratuito e Premium? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">O plano Gratuito permite 1 paciente, 1 familiar gestor e 2 cuidadores, com funcionalidades básicas como prescrições e escalas. O plano Premium (R$ 9,90/mês) oferece 2 pacientes, 2 familiares, além de recursos avançados como registro de consultas, exames e avaliação de enfermagem.</div></div>
+          <div class="faq-item"><button class="faq-question">Como funciona o usuário adicional? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Por R$ 2,90/mês, você pode adicionar mais um usuário ao seu plano (paciente, familiar ou cuidador). Ideal para famílias maiores que precisam de mais pessoas acompanhando o cuidado.</div></div>
+          <div class="faq-item"><button class="faq-question">Posso cancelar minha assinatura a qualquer momento? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Sim! Você pode cancelar sua assinatura a qualquer momento diretamente pelo app. Não há multas ou taxas de cancelamento. Após o cancelamento, você continua tendo acesso aos recursos do plano até o final do período pago.</div></div>
+          <div class="faq-item"><button class="faq-question">Quais formas de pagamento são aceitas? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Aceitamos cartão de crédito (Visa, Mastercard, American Express, Elo) e PIX. O pagamento é processado de forma segura através de parceiros certificados.</div></div>
+        </div>
+      </div>
+
+      <div class="faq-category">
+        <h3>Funcionalidades</h3>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question">Como cadastrar uma prescrição médica? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">No app, acesse a seção 'Prescrições' e toque em 'Adicionar Prescrição'. Você pode inserir o medicamento, dosagem, horários e frequência. O app enviará lembretes automáticos nos horários programados.</div></div>
+          <div class="faq-item"><button class="faq-question">Como funciona a escala de cuidadores? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Na seção 'Escalas', você pode criar turnos e atribuir cuidadores a cada período. O app notifica automaticamente cada cuidador sobre seus horários e permite que eles confirmem presença.</div></div>
+          <div class="faq-item"><button class="faq-question">Posso anexar exames e documentos? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Sim! No plano Premium, você pode anexar fotos de exames, receitas médicas e outros documentos ao perfil do paciente. Tudo fica organizado e acessível para consultas e compartilhamento com profissionais de saúde.</div></div>
+          <div class="faq-item"><button class="faq-question">Como funciona o chat integrado? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">O chat do Cuidame é exclusivo para comunicação sobre saúde. Todos os envolvidos no cuidado (familiares, cuidadores, enfermeiros) podem trocar mensagens, fotos e atualizações em um único lugar, sem misturar com conversas pessoais.</div></div>
+        </div>
+      </div>
+
+      <div class="faq-category">
+        <h3>Para Empresas</h3>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question">O Cuidame atende agências de home care? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Sim! Temos um plano empresarial específico para agências de home care, com funcionalidades como gestão de escalas com geolocalização, auditoria jurídica, dashboard BI e capacitação automática de cuidadores.</div></div>
+          <div class="faq-item"><button class="faq-question">Como solicitar uma demonstração? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Acesse a página 'Para Empresas' e preencha o formulário de contato. Nossa equipe entrará em contato para agendar uma demonstração personalizada e apresentar a melhor solução para sua agência.</div></div>
+          <div class="faq-item"><button class="faq-question">O sistema emite relatórios para as famílias? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer">Sim! O Cuidame gera relatórios automáticos de acompanhamento que podem ser compartilhados com as famílias dos pacientes, aumentando a transparência e confiança no serviço prestado.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section style="padding:4rem 0;background:#fff;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;">Ainda precisa de ajuda?</h2>
+        <p style="color:var(--muted-foreground);">Nossa equipe está pronta para ajudar você</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:48rem;margin:0 auto;">
+        <a href="#" class="contact-card">
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <h3 style="font-weight:600;margin-bottom:0.25rem;">Chat</h3>
+          <p style="font-size:0.875rem;color:var(--muted-foreground);">Converse conosco pelo app</p>
+        </a>
+        <a href="mailto:suporte@cuidame.app" class="contact-card">
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h3 style="font-weight:600;margin-bottom:0.25rem;">E-mail</h3>
+          <p style="font-size:0.875rem;color:var(--muted-foreground);">suporte@cuidame.app</p>
+        </a>
+        <a href="tel:+5500000000000" class="contact-card">
+          <div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h3 style="font-weight:600;margin-bottom:0.25rem;">Telefone</h3>
+          <p style="font-size:0.875rem;color:var(--muted-foreground);">Seg-Sex, 9h às 18h</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Pronto para começar?</h2>
+      <p>Baixe o Cuidame agora e comece a cuidar de quem você ama com mais tranquilidade.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-white btn-lg" data-download>Baixar App →</button>
+        <a href="precos.html" class="btn btn-outline-white btn-lg">Ver Preços</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="assets/cuidame-logo.png" alt="Cuidame" style="height:2.5rem"><p>O seu parceiro para gestão de medicação, evolução clínica e comunicação familiar - tudo em um só lugar.</p><div class="footer-badges"><span>🔒</span><span>LGPD</span><span style="margin:0 0.5rem">•</span><span>📍</span><span>Grupo Altevita</span></div></div>
+        <div class="footer-col"><h4>Produto</h4><ul><li><a href="familias.html">Para Famílias</a></li><li><a href="empresas.html">Para Empresas</a></li><li><a href="precos.html">Preços</a></li></ul></div>
+        <div class="footer-col"><h4>Suporte</h4><ul><li><a href="ajuda.html">Central de Ajuda</a></li><li><a href="mailto:contato@cuidame.app">Contato</a></li><li><a href="privacidade.html">Privacidade</a></li></ul></div>
+        <div class="footer-col"><h4>Baixe o App</h4><a href="https://apps.apple.com/us/app/cuidame-gestor-de-sa%C3%BAde/id6744027992" target="_blank" rel="noopener noreferrer" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor" style="width:1.25rem;height:1.25rem"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><span>App Store</span></a><a href="https://play.google.com/store/apps/details?id=br.com.cuidame&hl=pt" target="_blank" rel="noopener noreferrer" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor" style="width:1.25rem;height:1.25rem"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg><span>Google Play</span></a></div>
+      </div>
+      <div class="footer-bottom"><p>© <span id="currentYear"></span> Cuidame - Grupo Altevita. Todos os direitos reservados.</p><div class="footer-bottom-links"><a href="termos.html">Termos de Uso</a><a href="privacidade.html">Política de Privacidade</a></div></div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="downloadModal"><div class="modal"><button class="modal-close" onclick="closeModal()">&times;</button><h3>Baixe o App Cuidame</h3><p>Escolha a loja do seu dispositivo:</p><a href="https://apps.apple.com/us/app/cuidame-gestor-de-sa%C3%BAde/id6744027992" target="_blank" rel="noopener noreferrer" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div><div class="store-label">Baixar na</div><div class="store-name">App Store</div></div></a><a href="https://play.google.com/store/apps/details?id=br.com.cuidame&hl=pt" target="_blank" rel="noopener noreferrer" class="store-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg><div><div class="store-label">Disponível no</div><div class="store-name">Google Play</div></div></a></div></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        // Close siblings
+        item.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
