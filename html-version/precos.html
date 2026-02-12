@@ -4,9 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preços | Cuidame</title>
-  <meta name="description" content="Conheça os planos do Cuidame. Comece gratuitamente e faça upgrade quando precisar de mais recursos.">
+  <meta name="description" content="Conheça os planos do Cuidame. Comece com o Básico e evolua quando precisar.">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pricing-grid-new { display:grid; grid-template-columns:1fr; gap:1.5rem; max-width:64rem; margin:0 auto; align-items:stretch; }
+    @media(min-width:768px){ .pricing-grid-new { grid-template-columns:repeat(3,1fr); } }
+    .plan-card { background:#fff; border-radius:1rem; border:1px solid var(--border); padding:1.75rem; display:flex; flex-direction:column; transition:all 0.3s; }
+    .plan-card:hover { box-shadow:0 10px 40px -10px rgba(0,0,0,0.12); transform:translateY(-4px); }
+    .plan-card.featured { border:2px solid var(--accent); box-shadow:0 10px 40px -10px rgba(0,0,0,0.15); position:relative; }
+    @media(min-width:768px){ .plan-card.featured { transform:scale(1.05); } .plan-card.featured:hover { transform:scale(1.05) translateY(-4px); } }
+    .plan-icon { width:2.5rem; height:2.5rem; border-radius:0.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .plan-icon.basic { background:rgba(45,140,100,0.1); }
+    .plan-icon.premium { background:linear-gradient(135deg, hsl(158,55%,40%), hsl(175,50%,45%)); }
+    .plan-icon.addon { background:rgba(45,140,100,0.1); }
+    .plan-header { display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem; }
+    .plan-name { font-size:1.125rem; font-weight:700; color:var(--foreground); }
+    .price-old { font-size:0.875rem; color:var(--muted-foreground); text-decoration:line-through; }
+    .price-big { font-size:2.25rem; font-weight:800; color:var(--foreground); }
+    .price-big.free { background:linear-gradient(135deg, hsl(153,44%,15%), hsl(158,55%,40%)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .price-note { font-size:0.75rem; color:var(--accent); font-weight:500; margin-top:0.25rem; }
+    .plan-divider { width:100%; height:1px; background:var(--border); margin:1.25rem 0; }
+    .plan-divider.accent { background:rgba(45,140,100,0.2); }
+    .section-label { font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--foreground); margin-bottom:0.75rem; display:flex; align-items:center; gap:0.375rem; }
+    .section-label svg { width:0.875rem; height:0.875rem; color:var(--accent); }
+    .plan-list { list-style:none; padding:0; margin:0; }
+    .plan-list li { display:flex; align-items:center; gap:0.625rem; font-size:0.875rem; color:var(--foreground); margin-bottom:0.625rem; }
+    .plan-list li svg { width:1rem; height:1rem; color:var(--accent); flex-shrink:0; }
+    .badge-float { position:absolute; top:-0.875rem; left:50%; transform:translateX(-50%); background:var(--accent); color:#fff; font-size:0.75rem; font-weight:600; padding:0.25rem 1rem; border-radius:9999px; box-shadow:0 4px 12px rgba(0,0,0,0.15); display:flex; align-items:center; gap:0.25rem; white-space:nowrap; }
+    .discount-badge { display:inline-flex; align-items:center; font-size:0.625rem; background:rgba(45,140,100,0.1); color:var(--accent); padding:0.125rem 0.5rem; border-radius:9999px; font-weight:600; margin-left:0.5rem; }
+    .mt-auto { margin-top:auto; }
+  </style>
 </head>
 <body>
 
@@ -22,16 +50,16 @@
   </header>
 
   <!-- HERO -->
-  <section style="padding-top:8rem;padding-bottom:3rem;background:#fff;">
+  <section style="padding-top:8rem;padding-bottom:3rem;background:hsl(160,45%,96%);">
     <div class="container" style="text-align:center;">
       <span class="badge">Preços transparentes</span>
       <h1 style="font-size:2.5rem;font-weight:700;margin:1rem 0;">Escolha o plano ideal para <span class="text-accent">você</span></h1>
-      <p style="color:var(--muted-foreground);max-width:32rem;margin:0 auto;">Comece gratuitamente e faça upgrade quando precisar de mais recursos. Sem surpresas, sem taxas escondidas.</p>
+      <p style="color:var(--muted-foreground);max-width:32rem;margin:0 auto;">Comece com o Básico e evolua quando precisar. Sem surpresas, sem taxas escondidas.</p>
     </div>
   </section>
 
   <!-- TABS -->
-  <section style="padding:3rem 0;background:#fff;">
+  <section style="padding:3rem 0;background:hsl(160,45%,96%);">
     <div class="container">
       <div style="display:flex;justify-content:center;margin-bottom:3rem;">
         <div style="display:grid;grid-template-columns:1fr 1fr;max-width:24rem;width:100%;background:var(--background);border-radius:9999px;padding:0.25rem;border:1px solid var(--border);" id="pricingTabs">
@@ -42,35 +70,135 @@
 
       <!-- Famílias Pricing -->
       <div id="tab-familias">
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="price">Grátis</div>
-            <span class="price-label">para sempre</span>
-            <p class="plan-desc">Ideal para famílias iniciando o cuidado</p>
-            <p class="section-title">Contas:</p>
-            <ul><li><span class="bullet">•</span> 1 Paciente</li><li><span class="bullet">•</span> 1 Familiar (Gestor de Cuidado)</li><li><span class="bullet">•</span> 2 Cuidadores</li></ul>
-            <p class="section-title">Funcionalidades:</p>
-            <ul><li><span class="bullet">+</span> Prescrições Médicas</li><li><span class="bullet">+</span> Prescrição de Cuidados</li><li><span class="bullet">+</span> Escala de cuidadores</li><li><span class="bullet">+</span> Rotinas de saúde</li><li><span class="bullet">+</span> Registro de gastos</li><li><span class="bullet">+</span> Conteúdos Básicos</li></ul>
-            <button class="btn btn-outline" style="width:100%">Criar Conta Grátis</button>
+        <div class="pricing-grid-new">
+          <!-- Plano Básico -->
+          <div class="plan-card">
+            <div class="plan-header">
+              <div class="plan-icon basic">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <span class="plan-name">Plano Básico</span>
+            </div>
+            <div class="price-old">R$ 9,90</div>
+            <div class="price-big free">Grátis</div>
+            <div class="price-note">por 3 meses · depois R$ 9,90/mês</div>
+
+            <div class="plan-divider"></div>
+
+            <div class="section-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Usuários
+            </div>
+            <ul class="plan-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1 Paciente</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 2 Cuidadores (Familiar ou Profissional)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1 Administrador da Conta</li>
+            </ul>
+
+            <div class="section-label" style="margin-top:1rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.2 3.7a1 1 0 0 0 .6.6L17.5 8.5l-3.7 1.2a1 1 0 0 0-.6.6L12 14l-1.2-3.7a1 1 0 0 0-.6-.6L6.5 8.5l3.7-1.2a1 1 0 0 0 .6-.6L12 3z"/><path d="M5 17l.6 1.8a1 1 0 0 0 .6.6L8 20l-1.8.6a1 1 0 0 0-.6.6L5 23l-.6-1.8a1 1 0 0 0-.6-.6L2 20l1.8-.6a1 1 0 0 0 .6-.6L5 17z"/></svg>
+              Funcionalidades
+            </div>
+            <ul class="plan-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Prescrição Médica</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Prescrição de Cuidado</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Escala de Cuidados</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Rotina de Saúde</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Registro e Divisão de Gastos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Conteúdos Básicos</li>
+            </ul>
+
+            <div class="mt-auto" style="margin-top:1.5rem;">
+              <button class="btn btn-outline" style="width:100%;border-color:rgba(45,140,100,0.3);color:var(--accent);">Começar Grátis</button>
+            </div>
           </div>
-          <div class="pricing-card featured">
-            <span class="badge-top">Recomendado</span>
-            <div style="display:flex;align-items:baseline;gap:0.25rem"><span class="price-prefix">R$</span><span class="price">9,90</span><span class="price-label">/mês</span></div>
-            <p class="plan-desc">Para famílias que querem mais controle</p>
-            <p class="section-title">Contas:</p>
-            <ul><li><span class="bullet">•</span> 2 Pacientes</li><li><span class="bullet">•</span> 2 Familiares (Gestores)</li><li><span class="bullet">•</span> 2 Cuidadores</li></ul>
-            <p class="section-title">Funcionalidades:</p>
-            <ul><li><span class="bullet">+</span> Tudo do plano gratuito</li><li><span class="bullet">+</span> Registro de consultas</li><li><span class="bullet">+</span> Registro de exames</li><li><span class="bullet">+</span> Agenda personalizada</li><li><span class="bullet">+</span> Avaliação de Enfermagem</li><li><span class="bullet">+</span> Conteúdos exclusivos</li></ul>
-            <div class="promo-box"><p>🎉 Grátis durante o lançamento (até 01/03/2026)</p></div>
-            <button class="btn btn-accent" style="width:100%">Assinar Premium →</button>
+
+          <!-- Plano Premium -->
+          <div class="plan-card featured">
+            <div class="badge-float">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l3 12h14l3-12-5.5 6L12 2l-4.5 8L2 4z"/></svg>
+              Mais Popular
+            </div>
+            <div class="plan-header">
+              <div class="plan-icon premium">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M2 4l3 12h14l3-12-5.5 6L12 2l-4.5 8L2 4z"/></svg>
+              </div>
+              <span class="plan-name">Plano Premium</span>
+            </div>
+            <div style="display:flex;align-items:end;gap:0.5rem;">
+              <span class="price-old">R$ 49,90</span>
+              <span class="discount-badge">-40%</span>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:0.25rem;">
+              <span style="font-size:0.875rem;color:var(--muted-foreground);">R$</span>
+              <span class="price-big">29,90</span>
+              <span style="font-size:0.875rem;color:var(--muted-foreground);">/mês</span>
+            </div>
+            <div class="price-note">Desconto de lançamento</div>
+
+            <div class="plan-divider accent"></div>
+
+            <div class="section-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Usuários
+            </div>
+            <ul class="plan-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 2 Pacientes</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 4 Cuidadores (Familiar ou Profissional)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1 Administrador da Conta</li>
+            </ul>
+
+            <div class="section-label" style="margin-top:1rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.2 3.7a1 1 0 0 0 .6.6L17.5 8.5l-3.7 1.2a1 1 0 0 0-.6.6L12 14l-1.2-3.7a1 1 0 0 0-.6-.6L6.5 8.5l3.7-1.2a1 1 0 0 0 .6-.6L12 3z"/><path d="M5 17l.6 1.8a1 1 0 0 0 .6.6L8 20l-1.8.6a1 1 0 0 0-.6.6L5 23l-.6-1.8a1 1 0 0 0-.6-.6L2 20l1.8-.6a1 1 0 0 0 .6-.6L5 17z"/></svg>
+              Funcionalidades
+            </div>
+            <ul class="plan-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Todos do Básico</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Registros de Consultas de Saúde</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Registros de Exames</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Agenda personalizada por paciente</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Conteúdos Exclusivos</li>
+            </ul>
+
+            <div class="mt-auto" style="margin-top:1.5rem;">
+              <button class="btn btn-accent" style="width:100%;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.15);">Assinar Premium →</button>
+            </div>
           </div>
-          <div class="pricing-card addon">
-            <h3>Usuário Adicional</h3>
-            <div style="display:flex;align-items:baseline;gap:0.25rem;margin-bottom:0.5rem"><span class="addon-price">+ R$ 2,90</span><span class="price-label">/mês</span></div>
-            <p class="plan-desc">por usuário adicional</p>
-            <p style="font-size:0.875rem;margin-bottom:1rem">Ideal para famílias maiores que precisam de mais pessoas acompanhando o cuidado.</p>
-            <ul><li><span class="bullet">•</span> +1 Paciente</li><li><span class="bullet">•</span> +1 Familiar (Gestor)</li><li><span class="bullet">•</span> +1 Cuidador</li></ul>
-            <button class="btn btn-outline" style="width:100%">Adicionar Usuário</button>
+
+          <!-- Usuários Adicionais -->
+          <div class="plan-card">
+            <div class="plan-header">
+              <div class="plan-icon addon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <span class="plan-name">Usuários Adicionais</span>
+            </div>
+            <p style="font-size:0.75rem;color:var(--muted-foreground);margin-bottom:0.75rem;">Disponível para qualquer plano</p>
+            <div style="display:flex;align-items:end;gap:0.5rem;">
+              <span class="price-old">R$ 4,90</span>
+              <span class="discount-badge">Desconto</span>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:0.25rem;">
+              <span style="font-size:0.875rem;color:var(--muted-foreground);">R$</span>
+              <span class="price-big">2,90</span>
+              <span style="font-size:0.875rem;color:var(--muted-foreground);">/mês</span>
+            </div>
+            <div class="price-note">por usuário adicional</div>
+
+            <div class="plan-divider"></div>
+
+            <div class="section-label">Cadastre mais um usuário:</div>
+            <ul class="plan-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> +1 Paciente</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> +1 Cuidador (Familiar ou Profissional)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> +1 Administrador da Conta</li>
+            </ul>
+
+            <p style="font-size:0.75rem;color:var(--muted-foreground);margin:1rem 0;">Ideal para famílias maiores que precisam de mais pessoas acompanhando o cuidado.</p>
+
+            <div class="mt-auto">
+              <button class="btn btn-outline" style="width:100%;border-color:rgba(45,140,100,0.3);color:var(--accent);">Adicionar Usuário</button>
+            </div>
           </div>
         </div>
       </div>
@@ -78,27 +206,21 @@
       <!-- Empresas Pricing -->
       <div id="tab-empresas" style="display:none;">
         <div style="max-width:48rem;margin:0 auto;">
-          <div style="background:var(--background);border-radius:1rem;padding:2.5rem;border:2px solid var(--accent);text-align:center;">
+          <div style="background:var(--background);border-radius:1rem;padding:2.5rem;border:2px solid var(--accent);text-align:center;box-shadow:0 10px 40px -10px rgba(0,0,0,0.15);">
             <span class="badge">Para Agências de Home Care</span>
             <h3 style="font-size:1.5rem;font-weight:700;margin:1rem 0;">Plano Empresarial</h3>
             <p style="color:var(--muted-foreground);max-width:32rem;margin:0 auto 2rem;">Solução completa para gestão de agências de home care. Preços personalizados de acordo com o número de pacientes e funcionalidades necessárias.</p>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:24rem;margin:0 auto 2rem;text-align:left;">
-              <div>
-                <p style="font-size:0.875rem;font-weight:600;margin-bottom:0.5rem;">Inclui:</p>
-                <ul style="list-style:none;padding:0;font-size:0.875rem;color:var(--muted-foreground);">
-                  <li style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Gestão de Escalas</li>
-                  <li style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Auditoria Jurídica</li>
-                  <li style="display:flex;align-items:center;gap:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dashboard BI</li>
-                </ul>
-              </div>
-              <div>
-                <p style="font-size:0.875rem;font-weight:600;margin-bottom:0.5rem;">&nbsp;</p>
-                <ul style="list-style:none;padding:0;font-size:0.875rem;color:var(--muted-foreground);">
-                  <li style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Capacitação Automática</li>
-                  <li style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Suporte Dedicado</li>
-                  <li style="display:flex;align-items:center;gap:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Implementação Assistida</li>
-                </ul>
-              </div>
+              <ul style="list-style:none;padding:0;font-size:0.875rem;color:var(--muted-foreground);">
+                <li style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Gestão de Escalas</li>
+                <li style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Auditoria Jurídica</li>
+                <li style="display:flex;align-items:center;gap:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dashboard BI</li>
+              </ul>
+              <ul style="list-style:none;padding:0;font-size:0.875rem;color:var(--muted-foreground);">
+                <li style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Capacitação Automática</li>
+                <li style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Suporte Dedicado</li>
+                <li style="display:flex;align-items:center;gap:0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Implementação Assistida</li>
+              </ul>
             </div>
             <a href="empresas.html" class="btn btn-accent">Solicitar Proposta →</a>
           </div>
@@ -123,7 +245,7 @@
   <section class="cta">
     <div class="container">
       <h2>Aproveite o lançamento!</h2>
-      <p>Aproveite todos os recursos do Plano Premium durante o mês de lançamento do aplicativo Cuidame (até 01/03/2026)</p>
+      <p>Comece grátis por 3 meses no Plano Básico ou aproveite o desconto de lançamento no Premium.</p>
       <div class="cta-buttons">
         <button class="btn btn-white btn-lg" data-download>Começar Grátis →</button>
       </div>
@@ -147,7 +269,6 @@
 
   <script src="js/main.js"></script>
   <script>
-    // Pricing tabs
     document.querySelectorAll('.pricing-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.pricing-tab').forEach(t => {
