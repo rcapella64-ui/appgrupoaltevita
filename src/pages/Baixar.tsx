@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { QRCodeSVG } from "qrcode.react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const APP_STORE_URL = "https://apps.apple.com/br/app/cuidame-gestor-de-sa%C3%BAde/id6744027992";
 const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=br.com.cuidame&hl=pt";
+const BAIXAR_URL = "https://appgrupoaltevita.lovable.app/baixar";
 
 const Baixar = () => {
   const [showFallback, setShowFallback] = useState(false);
@@ -78,8 +80,21 @@ const Baixar = () => {
             </a>
           </div>
 
+          <div className="flex flex-col items-center gap-3 p-6 bg-secondary rounded-2xl">
+            <p className="text-sm font-medium text-foreground">Escaneie com seu celular</p>
+            <div className="bg-white p-3 rounded-xl">
+              <QRCodeSVG
+                value={BAIXAR_URL}
+                size={160}
+                fgColor="#1b4332"
+                level="H"
+              />
+            </div>
+            <p className="text-xs text-muted-foreground">Aponte a câmera para o QR Code</p>
+          </div>
+
           <p className="text-xs text-muted-foreground">
-            Problemas com o download? Aponte a câmera do seu celular para o QR Code novamente.
+            Problemas com o download? Aponte a câmera do seu celular para o QR Code acima.
           </p>
         </div>
       </main>
