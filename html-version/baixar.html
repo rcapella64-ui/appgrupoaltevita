@@ -65,7 +65,13 @@
         </a>
       </div>
 
-      <p class="baixar-help">Problemas com o download? Aponte a câmera do seu celular para o QR Code novamente.</p>
+      <div class="baixar-qr">
+        <p class="baixar-qr-title">Escaneie com seu celular</p>
+        <div class="baixar-qr-code" id="qrcode"></div>
+        <p class="baixar-qr-hint">Aponte a câmera para o QR Code</p>
+      </div>
+
+      <p class="baixar-help">Problemas com o download? Aponte a câmera do seu celular para o QR Code acima.</p>
     </div>
   </main>
 
@@ -137,6 +143,7 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/baixar.js"></script>
 </body>

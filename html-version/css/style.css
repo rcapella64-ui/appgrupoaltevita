@@ -1209,6 +1209,35 @@ img { max-width: 100%; height: auto; }
   text-align: left;
 }
 
+.baixar-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--secondary);
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.baixar-qr-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.baixar-qr-code {
+  background: #fff;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  line-height: 0;
+}
+
+.baixar-qr-hint {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
 .baixar-help {
   font-size: 0.75rem;
   color: var(--muted-foreground);
