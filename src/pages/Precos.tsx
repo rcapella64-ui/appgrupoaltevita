@@ -86,8 +86,8 @@ const PricingCards = () => (
       </div>
 
       <div className="mt-auto">
-        <Button variant="outline" className="w-full rounded-full text-accent border-accent/30 hover:bg-accent/10">
-          Começar Grátis
+        <Button variant="outline" className="w-full rounded-full text-accent border-accent/30 hover:bg-accent/10" asChild>
+          <a href="https://cuidame.grupoaltevita.com.br/baixar.html" target="_blank" rel="noopener noreferrer">Começar Grátis</a>
         </Button>
       </div>
     </div>
@@ -303,8 +303,8 @@ const Precos = () => {
           <p className="text-white/90 mb-8 max-w-lg mx-auto">
             Comece grátis por 3 meses no Plano Básico ou aproveite o desconto de lançamento no Premium.
           </p>
-          <Button className="bg-white text-primary hover:bg-white/90 rounded-full px-8">
-            Começar Grátis →
+          <Button className="bg-white text-primary hover:bg-white/90 rounded-full px-8" asChild>
+            <a href="https://cuidame.grupoaltevita.com.br/baixar.html" target="_blank" rel="noopener noreferrer">Começar Grátis →</a>
           </Button>
         </div>
       </section>

@@ -100,8 +100,8 @@ export function Pricing() {
             </div>
 
             <div className="mt-auto">
-              <Button variant="outline" className="w-full rounded-full text-accent border-accent/30 hover:bg-accent/10">
-                Começar Grátis
+              <Button variant="outline" className="w-full rounded-full text-accent border-accent/30 hover:bg-accent/10" asChild>
+                <a href="https://cuidame.grupoaltevita.com.br/baixar.html" target="_blank" rel="noopener noreferrer">Começar Grátis</a>
               </Button>
             </div>
           </div>
