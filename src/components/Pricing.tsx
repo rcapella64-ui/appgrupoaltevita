@@ -169,8 +169,8 @@ export function Pricing() {
             </div>
 
             <div className="mt-auto">
-              <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full font-semibold shadow-lg">
-                Assinar Premium →
+              <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full font-semibold shadow-lg" asChild>
+                <a href="https://cuidame.grupoaltevita.com.br/assinaturas/" target="_blank" rel="noopener noreferrer">Assinar Premium →</a>
               </Button>
             </div>
           </div>
