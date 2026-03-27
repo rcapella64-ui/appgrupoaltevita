@@ -55,9 +55,11 @@ const CTA = () => {
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-white/90 rounded-full px-8"
-              onClick={handleDownloadClick}
+              asChild
             >
-              Baixar App →
+              <a href="https://cuidame.grupoaltevita.com.br/baixar.html" target="_blank" rel="noopener noreferrer">
+                Baixar App →
+              </a>
             </Button>
             <DialogContent className="sm:max-w-md">
               <DialogHeader>
